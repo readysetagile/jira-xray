@@ -1,0 +1,8 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4FeczRw8gnVCf3+MNYDQCdtylbvMvPUXi0MLZZTk177uAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgKLRMTE8rqjIwBgAZOlUb3gAAAA==[0mruby-docker-slave-0000q9agfrz03 on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins17359954736008932919.sh
++ sudo ls -lF
+/tmp/jenkins17359954736008932919.sh: 2: /tmp/jenkins17359954736008932919.sh: sudo: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

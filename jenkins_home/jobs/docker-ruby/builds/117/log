@@ -1,0 +1,119 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4J3QkJ0nwjMCkXR7ak+QTH+a1EWBtSsGkIiKFpWK5lQEAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA6PM9HyLvArzxDQAnlbdet4AAAA=[0mruby-docker-slave-0002igo8nx7af on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins11168381656048430903.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: 
+XRAY_TEST_EXECS: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_RAW_RESPONSE: 
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins140942238926070657.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+@GTT-3
+Feature: Fields are formatted correctly on entry screen
+
+  Background:                                  # features/1_GTT-3_GTT-7.feature:4
+      #@GTT-7
+    Given I navigate to the GasTrak Entry page # features/step_definitions/xray_steps.rb:14
+    Then I will see the GasTrak entry page     # features/step_definitions/xray_steps.rb:18
+
+  @GTT-2 @GTT-1 @GTT-4
+  Scenario Outline: User entry for gallons field is formatted correctly # features/1_GTT-3_GTT-7.feature:12
+    Given I enter <user_entry> in the Gallons field                     # features/1_GTT-3_GTT-7.feature:13
+    When I lose focus from the Gallons Field                            # features/1_GTT-3_GTT-7.feature:14
+    Then I will see <formatted_entry> in the Gallons field              # features/1_GTT-3_GTT-7.feature:15
+
+    Examples: 
+      | user_entry | formatted_entry |
+      | 15689      | 15.689          |
+      | 9806       | 9.806           |
+      | 9806       | 9.805           |
+      Gallons is not formatted correctly.
+      Expected: "9.805"
+        Actual: "9.806" (Minitest::Assertion)
+      ./features/step_definitions/xray_steps.rb:41:in `/^I will see (\d+)\.(\d+) in the Gallons field$/'
+      features/1_GTT-3_GTT-7.feature:21:in `Then I will see 9.805 in the Gallons field'
+      features/1_GTT-3_GTT-7.feature:15:in `Then I will see <formatted_entry> in the Gallons field'
+
+  @GTT-65 @GTT-1 @GTT-4
+  Scenario Outline: User entry for Price Per Gallon field is formatted correctly # features/1_GTT-3_GTT-7.feature:26
+    Given I enter <user_entry> in the Price Per Gallon field                     # features/1_GTT-3_GTT-7.feature:27
+    When I lose focus from the Price Per Gallon Field                            # features/1_GTT-3_GTT-7.feature:28
+    Then I will see <formatted_entry> in the Price Per Gallon field              # features/1_GTT-3_GTT-7.feature:29
+
+    Examples: 
+      | user_entry | formatted_entry |
+      | 216        | 2.16            |
+      Element not found: Price Per Gallon (RuntimeError)
+      ./features/step_definitions/xray_steps.rb:10:in `get_element'
+      ./features/step_definitions/xray_steps.rb:25:in `/^I enter (\d+) in the (.+) field$/'
+      features/1_GTT-3_GTT-7.feature:33:in `Given I enter 216 in the Price Per Gallon field'
+      features/1_GTT-3_GTT-7.feature:27:in `Given I enter <user_entry> in the Price Per Gallon field'
+      | 193        | 1.93            |
+      Element not found: Price Per Gallon (RuntimeError)
+      ./features/step_definitions/xray_steps.rb:10:in `get_element'
+      ./features/step_definitions/xray_steps.rb:25:in `/^I enter (\d+) in the (.+) field$/'
+      features/1_GTT-3_GTT-7.feature:34:in `Given I enter 193 in the Price Per Gallon field'
+      features/1_GTT-3_GTT-7.feature:27:in `Given I enter <user_entry> in the Price Per Gallon field'
+      | 304        | 3.04            |
+      Element not found: Price Per Gallon (RuntimeError)
+      ./features/step_definitions/xray_steps.rb:10:in `get_element'
+      ./features/step_definitions/xray_steps.rb:25:in `/^I enter (\d+) in the (.+) field$/'
+      features/1_GTT-3_GTT-7.feature:35:in `Given I enter 304 in the Price Per Gallon field'
+      features/1_GTT-3_GTT-7.feature:27:in `Given I enter <user_entry> in the Price Per Gallon field'
+
+Failing Scenarios:
+cucumber features/1_GTT-3_GTT-7.feature:21 # Scenario Outline: User entry for gallons field is formatted correctly, Examples (#3)
+cucumber features/1_GTT-3_GTT-7.feature:33 # Scenario Outline: User entry for Price Per Gallon field is formatted correctly, Examples (#1)
+cucumber features/1_GTT-3_GTT-7.feature:34 # Scenario Outline: User entry for Price Per Gallon field is formatted correctly, Examples (#2)
+cucumber features/1_GTT-3_GTT-7.feature:35 # Scenario Outline: User entry for Price Per Gallon field is formatted correctly, Examples (#3)
+
+6 scenarios (4 failed, 2 passed)
+30 steps (4 failed, 6 undefined, 20 passed)
+0m1.604s
+
+You can implement step definitions for undefined steps with these snippets:
+
+When(/^I lose focus from the Price Per Gallon Field$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I will see (\d+)\.(\d+) in the Price Per Gallon field$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10301","key":"GTT-66","self":"http://host.docker.internal:8080/rest/api/2/issue/10301"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: GTT-2;GTT-65
+XRAY_TEST_EXECS: GTT-66
+XRAY_ISSUES_MODIFIED: GTT-66;GTT-2;GTT-65
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10301","key":"GTT-66","self":"http://host.docker.internal:8080/rest/api/2/issue/10301"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"}]}}
+Finished: FAILURE

@@ -1,0 +1,29 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4LpHhUXPrEy9pYM369JPkqtcWxdrMSVWc8GwZiVX1l1bAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgKDEyzzExyDBMAwB3oBxI3gAAAA==[0mruby-docker-slave-0000t27l40h1f on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins3694249060191577940.sh
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format html --out output/report.html
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+Feature: Facebook Login Test
+
+  Scenario: LogIn            # features/instructions.feature:3
+    Then I LogIn in Facebook # features/step_definitions/steps.rb:1
+      no such element: Unable to locate element: {"method":"css selector","selector":"#login"}
+        (Session info: headless chrome=85.0.4183.121) (Selenium::WebDriver::Error::NoSuchElementError)
+      #0 0x5645618d7a39 <unknown>
+      ./features/step_definitions/steps.rb:9:in `/^I LogIn in Facebook$/'
+      features/instructions.feature:4:in `Then I LogIn in Facebook'
+
+Failing Scenarios:
+cucumber features/instructions.feature:3 # Scenario: LogIn
+
+1 scenario (1 failed)
+1 step (1 failed)
+0m2.878s
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

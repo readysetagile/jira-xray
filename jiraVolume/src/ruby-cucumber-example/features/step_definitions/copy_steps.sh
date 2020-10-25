@@ -1,0 +1,1 @@
+cp /home/john/*.rb .

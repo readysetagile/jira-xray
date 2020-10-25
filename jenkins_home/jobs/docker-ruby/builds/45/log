@@ -1,0 +1,11 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4CKpWrJ/tuCA4wyE2XtUT0K/Kz8XvRpDxDaM+uL7WcAOAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA8PSLLOUXEvTtCQA+e66ot4AAAA=[0mruby-docker-slave-0001uj6dm95fb on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins13949484760784218769.sh
++ rm -f *.feature
++ curl -u john:44145Jar --remote-name --remote-header-name http://localhost:8080/rest/raven/1.0/export/test?keys=GTT-4
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (7) Failed to connect to localhost port 8080: Connection refused
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

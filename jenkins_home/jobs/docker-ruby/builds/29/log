@@ -1,0 +1,16 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4Dh17cGiuyd8IlkEuw5m1UXbubvuB1Zb6YRdQoZISadMAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgKM40zcvPNy7PAgDbFrft3gAAAA==[0mruby-docker-slave-0000si5noo3wj on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins3818645236707130771.sh
++ ls -lF /var/atlassian/application-data/jira
+total 36
+drwxr-x--- 3 2001 2001 4096 Oct  2 19:50 caches/
+drwxr-x--- 3 2001 2001 4096 Oct  2 19:50 data/
+-rwx------ 1 2001 2001  999 Oct  2 19:50 dbconfig.xml*
+drwxr-x--- 2 2001 2001 4096 Oct  2 19:50 export/
+drwxr-x--- 4 2001 2001 4096 Oct  2 19:50 import/
+drwxr-x--- 2 2001 2001 4096 Oct  2 19:50 log/
+drwxr-x--- 5 2001 2001 4096 Oct  2 19:50 plugins/
+drwxrwxrwx 2 root root 4096 Oct  2 20:07 src/
+drwxr-x--- 3 2001 2001 4096 Oct  2 19:50 tmp/
+Finished: SUCCESS

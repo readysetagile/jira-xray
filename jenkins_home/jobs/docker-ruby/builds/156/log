@@ -1,0 +1,162 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4PiNxMz87/EBt1h2UB7wUiltjt73gECr3D//sE6LN5YyAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA6OqotKcpEqDFGMA21MPkd4AAAA=[0mruby-docker-slave-0002zrulby0d3 on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins9292746152303063948.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/2_GTT-97_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_RAW_RESPONSE: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TEST_EXECS: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TESTS: 
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins10187904809352613593.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+Fetching gem metadata from https://rubygems.org/.
+Using bundler 2.1.4
+Fetching minitest 5.14.2
+Installing minitest 5.14.2
+Bundle complete! 1 Gemfile dependency, 2 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --format pretty --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+@GTT-3
+Feature: All fields are automatically formatted correctly on the user screen
+
+  #As a User
+  #
+  #I want fields on the GasTrak entry screen to be automatically formatted correctly
+  #
+  #so that I reduce keystrokes
+  Background:                                  # features/1_GTT-3_GTT-7.feature:9
+      #@GTT-7
+    Given I navigate to the GasTrak Entry page # features/step_definitions/xray_steps.rb:31
+    Then I will see the GasTrak entry page     # features/step_definitions/xray_steps.rb:35
+
+  @GTT-70 @GTT-1 @GTT-4
+  Scenario Outline: User entry for mileage field is formatted correctly # features/1_GTT-3_GTT-7.feature:17
+    Given I enter <user_entry> in the Mileage field                     # features/1_GTT-3_GTT-7.feature:18
+    When I lose focus from the Mileage Field                            # features/1_GTT-3_GTT-7.feature:19
+    Then I will see <formatted_entry> in the Mileage field              # features/1_GTT-3_GTT-7.feature:20
+
+    Examples: 
+      | user_entry | formatted_entry |
+      | 689        | 689             |
+      | 7382       | 7382            |
+      | 21378      | 21378           |
+
+  @GTT-2 @GTT-1 @GTT-4
+  Scenario Outline: User entry for gallons field is formatted correctly # features/1_GTT-3_GTT-7.feature:31
+    Given I enter <user_entry> in the Gallons field                     # features/1_GTT-3_GTT-7.feature:32
+    When I lose focus from the Gallons Field                            # features/1_GTT-3_GTT-7.feature:33
+    Then I will see <formatted_entry> in the Gallons field              # features/1_GTT-3_GTT-7.feature:34
+
+    Examples: 
+      | user_entry | formatted_entry |
+      | 15689      | 15.689          |
+      | 9806       | 9.806           |
+      | 9860       | 9.860           |
+
+  @GTT-65 @GTT-1 @GTT-4
+  Scenario Outline: User entry for Price Per Gallon field is formatted correctly # features/1_GTT-3_GTT-7.feature:45
+    Given I enter <user_entry> in the Price Per Gallon field                     # features/1_GTT-3_GTT-7.feature:46
+    When I lose focus from the Price Per Gallon Field                            # features/1_GTT-3_GTT-7.feature:47
+    Then I will see <formatted_entry> in the Price Per Gallon field              # features/1_GTT-3_GTT-7.feature:48
+
+    Examples: 
+      | user_entry | formatted_entry |
+      | 216        | 2.16            |
+      | 193        | 1.93            |
+      | 304        | 3.04            |
+
+  @GTT-71 @GTT-1 @GTT-4
+  Scenario Outline: User entry for comments field is formatted correctly # features/1_GTT-3_GTT-7.feature:59
+    Given I enter the phrase "<user_entry>" in the Comments field        # features/1_GTT-3_GTT-7.feature:60
+    When I lose focus from the Comments Field                            # features/1_GTT-3_GTT-7.feature:61
+    Then I will see the phrase "<formatted_entry>" in the Comments field # features/1_GTT-3_GTT-7.feature:62
+
+    Examples: 
+      | user_entry              | formatted_entry         |
+      | these are some comments | these are some comments |
+      | speedway on main st.    | speedway on main st.    |
+      | john's discount         | john's discount         |
+
+@GTT-97
+Feature: All fields are calculated correctly on the user screen
+
+  #As a User
+  #
+  #I want fields on the GasTrak entry screen to be automatically calculated correctly
+  #
+  #so that I can check the accuracy of the transaction
+  Background:                                  # features/2_GTT-97_GTT-7.feature:9
+      #@GTT-7
+    Given I navigate to the GasTrak Entry page # features/step_definitions/xray_steps.rb:31
+    Then I will see the GasTrak entry page     # features/step_definitions/xray_steps.rb:35
+
+  @GTT-98 @GTT-100 @GTT-4
+  Scenario Outline: Total field is calculated correctly # features/2_GTT-97_GTT-7.feature:17
+    Given I enter <ppg> in the Price Per Gallon field   # features/2_GTT-97_GTT-7.feature:18
+    And I enter <gallons> in the Gallons field          # features/2_GTT-97_GTT-7.feature:19
+    When I click the Calculate button                   # features/2_GTT-97_GTT-7.feature:20
+    Then I will see <total> in the Total field          # features/2_GTT-97_GTT-7.feature:21
+
+    Examples: 
+      | ppg   | gallons | total |
+      | 1.899 | 18.006  | 34.19 |
+      Total is not formatted correctly.
+      <"34.19"> expected but was
+      <"0">. (Test::Unit::AssertionFailedError)
+      ./features/step_definitions/xray_steps.rb:70:in `/^I will see (\d+)\.(\d+) in the (.+) field$/'
+      features/2_GTT-97_GTT-7.feature:25:in `Then I will see 34.19 in the Total field'
+      features/2_GTT-97_GTT-7.feature:21:in `Then I will see <total> in the Total field'
+      | 2.169 | 17.323  | 37.57 |
+      Total is not formatted correctly.
+      <"37.57"> expected but was
+      <"0">. (Test::Unit::AssertionFailedError)
+      ./features/step_definitions/xray_steps.rb:70:in `/^I will see (\d+)\.(\d+) in the (.+) field$/'
+      features/2_GTT-97_GTT-7.feature:26:in `Then I will see 37.57 in the Total field'
+      features/2_GTT-97_GTT-7.feature:21:in `Then I will see <total> in the Total field'
+      | 1.549 | 18.232  | 28.24 |
+      Total is not formatted correctly.
+      <"28.24"> expected but was
+      <"0">. (Test::Unit::AssertionFailedError)
+      ./features/step_definitions/xray_steps.rb:70:in `/^I will see (\d+)\.(\d+) in the (.+) field$/'
+      features/2_GTT-97_GTT-7.feature:27:in `Then I will see 28.24 in the Total field'
+      features/2_GTT-97_GTT-7.feature:21:in `Then I will see <total> in the Total field'
+
+Failing Scenarios:
+cucumber features/2_GTT-97_GTT-7.feature:25 # Scenario Outline: Total field is calculated correctly, Examples (#1)
+cucumber features/2_GTT-97_GTT-7.feature:26 # Scenario Outline: Total field is calculated correctly, Examples (#2)
+cucumber features/2_GTT-97_GTT-7.feature:27 # Scenario Outline: Total field is calculated correctly, Examples (#3)
+
+15 scenarios (3 failed, 12 passed)
+78 steps (3 failed, 75 passed)
+0m4.667s
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10406","key":"GTT-107","self":"http://host.docker.internal:8080/rest/api/2/issue/10406"},"testIssues":{"success":[{"id":"10305","key":"GTT-70","self":"http://host.docker.internal:8080/rest/api/2/issue/10305"},{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"},{"id":"10306","key":"GTT-71","self":"http://host.docker.internal:8080/rest/api/2/issue/10306"},{"id":"10333","key":"GTT-98","self":"http://host.docker.internal:8080/rest/api/2/issue/10333"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10406","key":"GTT-107","self":"http://host.docker.internal:8080/rest/api/2/issue/10406"},"testIssues":{"success":[{"id":"10305","key":"GTT-70","self":"http://host.docker.internal:8080/rest/api/2/issue/10305"},{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"},{"id":"10306","key":"GTT-71","self":"http://host.docker.internal:8080/rest/api/2/issue/10306"},{"id":"10333","key":"GTT-98","self":"http://host.docker.internal:8080/rest/api/2/issue/10333"}]}}
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TEST_EXECS: GTT-107
+XRAY_ISSUES_MODIFIED: GTT-107;GTT-70;GTT-2;GTT-65;GTT-98;GTT-71
+XRAY_TESTS: GTT-70;GTT-2;GTT-65;GTT-98;GTT-71
+Finished: FAILURE

@@ -1,0 +1,239 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>john</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <com.nirima.jenkins.plugins.docker.action.DockerBuildAction plugin="docker-plugin@1.2.1">
+      <cloudId>docker</cloudId>
+      <containerHost>tcp://host.docker.internal:4243</containerHost>
+      <containerId>b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f</containerId>
+      <inspect>{
+  &quot;Args&quot; : [ ],
+  &quot;Config&quot; : {
+    &quot;AttachStderr&quot; : false,
+    &quot;AttachStdin&quot; : false,
+    &quot;AttachStdout&quot; : false,
+    &quot;Cmd&quot; : [ &quot;/bin/sh&quot; ],
+    &quot;Domainname&quot; : &quot;&quot;,
+    &quot;Env&quot; : [ &quot;PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;, &quot;LANG=C.UTF-8&quot;, &quot;RUBY_MAJOR=2.7&quot;, &quot;RUBY_VERSION=2.7.1&quot;, &quot;RUBY_DOWNLOAD_SHA256=b224f9844646cc92765df8288a46838511c1cec5b550d8874bd4686a904fcee7&quot;, &quot;GEM_HOME=/usr/local/bundle&quot;, &quot;BUNDLE_SILENCE_ROOT_WARNING=1&quot;, &quot;BUNDLE_APP_CONFIG=/usr/local/bundle&quot; ],
+    &quot;Hostname&quot; : &quot;b3f1646ae625&quot;,
+    &quot;Image&quot; : &quot;ruby-docker-slave&quot;,
+    &quot;Labels&quot; : {
+      &quot;com.nirima.jenkins.plugins.docker.JenkinsContainerImage&quot; : &quot;ruby-docker-slave&quot;,
+      &quot;com.nirima.jenkins.plugins.docker.JenkinsId&quot; : &quot;bd562745540a407fdd29081545940b05&quot;,
+      &quot;com.nirima.jenkins.plugins.docker.JenkinsNodeName&quot; : &quot;ruby-docker-slave-00026afj5wzcz&quot;,
+      &quot;com.nirima.jenkins.plugins.docker.JenkinsRemoveVolumes&quot; : &quot;false&quot;,
+      &quot;com.nirima.jenkins.plugins.docker.JenkinsServerUrl&quot; : &quot;http://localhost:9090/&quot;,
+      &quot;com.nirima.jenkins.plugins.docker.JenkinsTemplateName&quot; : &quot;ruby-docker-slave&quot;
+    },
+    &quot;OpenStdin&quot; : false,
+    &quot;StdinOnce&quot; : false,
+    &quot;Tty&quot; : true,
+    &quot;User&quot; : &quot;&quot;,
+    &quot;Volumes&quot; : {
+      &quot;/usr/src/app&quot; : { }
+    },
+    &quot;WorkingDir&quot; : &quot;&quot;
+  },
+  &quot;Created&quot; : &quot;2020-10-05T21:03:43.8610339Z&quot;,
+  &quot;Driver&quot; : &quot;overlay2&quot;,
+  &quot;ExecDriver&quot; : null,
+  &quot;HostConfig&quot; : {
+    &quot;BlkioWeight&quot; : 0,
+    &quot;ContainerIDFile&quot; : &quot;&quot;,
+    &quot;CpuPeriod&quot; : 0,
+    &quot;CpuRealtimePeriod&quot; : 0,
+    &quot;CpuRealtimeRuntime&quot; : 0,
+    &quot;CpuShares&quot; : 0,
+    &quot;CpuQuota&quot; : 0,
+    &quot;CpusetCpus&quot; : &quot;&quot;,
+    &quot;CpusetMems&quot; : &quot;&quot;,
+    &quot;IpcMode&quot; : &quot;private&quot;,
+    &quot;Cgroup&quot; : &quot;&quot;,
+    &quot;LogConfig&quot; : {
+      &quot;Type&quot; : &quot;json-file&quot;,
+      &quot;Config&quot; : { }
+    },
+    &quot;Memory&quot; : 0,
+    &quot;MemorySwap&quot; : 0,
+    &quot;MemoryReservation&quot; : 0,
+    &quot;KernelMemory&quot; : 0,
+    &quot;NetworkMode&quot; : &quot;default&quot;,
+    &quot;OomKillDisable&quot; : false,
+    &quot;AutoRemove&quot; : false,
+    &quot;OomScoreAdj&quot; : 0,
+    &quot;PortBindings&quot; : { },
+    &quot;Privileged&quot; : true,
+    &quot;PublishAllPorts&quot; : false,
+    &quot;ReadonlyRootfs&quot; : false,
+    &quot;RestartPolicy&quot; : {
+      &quot;MaximumRetryCount&quot; : 0,
+      &quot;Name&quot; : &quot;&quot;
+    },
+    &quot;CpuCount&quot; : 0,
+    &quot;CpuPercent&quot; : 0,
+    &quot;IOMaximumIOps&quot; : 0,
+    &quot;IOMaximumBandwidth&quot; : 0,
+    &quot;VolumesFrom&quot; : [ &quot;jira-xray_jira_1:rw&quot; ],
+    &quot;PidMode&quot; : &quot;&quot;,
+    &quot;SecurityOpt&quot; : [ &quot;label=disable&quot; ],
+    &quot;CgroupParent&quot; : &quot;&quot;,
+    &quot;VolumeDriver&quot; : &quot;&quot;,
+    &quot;ShmSize&quot; : 67108864,
+    &quot;Runtime&quot; : &quot;runc&quot;,
+    &quot;UTSMode&quot; : &quot;&quot;,
+    &quot;UsernsMode&quot; : &quot;&quot;,
+    &quot;ConsoleSize&quot; : [ 0, 0 ]
+  },
+  &quot;HostnamePath&quot; : &quot;/var/lib/docker/containers/b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f/hostname&quot;,
+  &quot;HostsPath&quot; : &quot;/var/lib/docker/containers/b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f/hosts&quot;,
+  &quot;LogPath&quot; : &quot;/var/lib/docker/containers/b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f/b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f-json.log&quot;,
+  &quot;Id&quot; : &quot;b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f&quot;,
+  &quot;SizeRootFs&quot; : null,
+  &quot;Image&quot; : &quot;sha256:2bf01be71b8673c3676f85e38013737c851f3736ee33c8caf4bf48a07db14643&quot;,
+  &quot;MountLabel&quot; : &quot;&quot;,
+  &quot;Name&quot; : &quot;/competent_tereshkova&quot;,
+  &quot;RestartCount&quot; : 0,
+  &quot;NetworkSettings&quot; : {
+    &quot;Bridge&quot; : &quot;&quot;,
+    &quot;SandboxID&quot; : &quot;09c7b5c698de5b2a46d1d758ea905473676acad65e999e03df6187e74f5d78c5&quot;,
+    &quot;HairpinMode&quot; : false,
+    &quot;LinkLocalIPv6Address&quot; : &quot;&quot;,
+    &quot;LinkLocalIPv6PrefixLen&quot; : 0,
+    &quot;Ports&quot; : { },
+    &quot;SandboxKey&quot; : &quot;/var/run/docker/netns/09c7b5c698de&quot;,
+    &quot;SecondaryIPAddresses&quot; : null,
+    &quot;SecondaryIPv6Addresses&quot; : null,
+    &quot;EndpointID&quot; : &quot;6fdf6db6bc0bcb31b114485c99f692797cad9f8da71397dc6c3bdd5dc3acb692&quot;,
+    &quot;Gateway&quot; : &quot;172.17.0.1&quot;,
+    &quot;PortMapping&quot; : null,
+    &quot;GlobalIPv6Address&quot; : &quot;&quot;,
+    &quot;GlobalIPv6PrefixLen&quot; : 0,
+    &quot;IPAddress&quot; : &quot;172.17.0.2&quot;,
+    &quot;IPPrefixLen&quot; : 16,
+    &quot;IPv6Gateway&quot; : &quot;&quot;,
+    &quot;MacAddress&quot; : &quot;02:42:ac:11:00:02&quot;,
+    &quot;Networks&quot; : {
+      &quot;bridge&quot; : {
+        &quot;IPAMConfig&quot; : null,
+        &quot;Links&quot; : null,
+        &quot;Aliases&quot; : null,
+        &quot;NetworkID&quot; : &quot;70f00897090590655314ac6b74c0de28d2c7ba30da2ee83320c87c4a22cb4430&quot;,
+        &quot;EndpointID&quot; : &quot;6fdf6db6bc0bcb31b114485c99f692797cad9f8da71397dc6c3bdd5dc3acb692&quot;,
+        &quot;Gateway&quot; : &quot;172.17.0.1&quot;,
+        &quot;IPAddress&quot; : &quot;172.17.0.2&quot;,
+        &quot;IPPrefixLen&quot; : 16,
+        &quot;IPv6Gateway&quot; : &quot;&quot;,
+        &quot;GlobalIPv6Address&quot; : &quot;&quot;,
+        &quot;GlobalIPv6PrefixLen&quot; : 0,
+        &quot;MacAddress&quot; : &quot;02:42:ac:11:00:02&quot;
+      }
+    }
+  },
+  &quot;Path&quot; : &quot;/bin/sh&quot;,
+  &quot;ProcessLabel&quot; : &quot;&quot;,
+  &quot;ResolvConfPath&quot; : &quot;/var/lib/docker/containers/b3f1646ae625c4d510077668a38b45a718ca7f7c77d73e4d1003e77e745cf12f/resolv.conf&quot;,
+  &quot;ExecIDs&quot; : [ &quot;265b8b2fbd928f620dbd7726592df8b6a1e35e1e0fe0b2eb034f919a05dcab25&quot; ],
+  &quot;State&quot; : {
+    &quot;oomkilled&quot; : false,
+    &quot;Status&quot; : &quot;running&quot;,
+    &quot;Running&quot; : true,
+    &quot;Paused&quot; : false,
+    &quot;Restarting&quot; : false,
+    &quot;OOMKilled&quot; : false,
+    &quot;Dead&quot; : false,
+    &quot;Pid&quot; : 26187,
+    &quot;ExitCode&quot; : 0,
+    &quot;Error&quot; : &quot;&quot;,
+    &quot;StartedAt&quot; : &quot;2020-10-05T21:03:44.1510164Z&quot;,
+    &quot;FinishedAt&quot; : &quot;0001-01-01T00:00:00Z&quot;,
+    &quot;Health&quot; : null
+  },
+  &quot;Volumes&quot; : null,
+  &quot;VolumesRW&quot; : null,
+  &quot;Node&quot; : null,
+  &quot;Mounts&quot; : [ {
+    &quot;Name&quot; : null,
+    &quot;Source&quot; : &quot;/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu-20.04/effb27ffe08fe25d168dd9bf71b3605e5043397c08c41e5f8d1a1ccd53551e65&quot;,
+    &quot;Destination&quot; : {
+      &quot;path&quot; : &quot;/var/atlassian/application-data/jira&quot;
+    },
+    &quot;Driver&quot; : null,
+    &quot;Mode&quot; : &quot;&quot;,
+    &quot;RW&quot; : true
+  }, {
+    &quot;Name&quot; : &quot;d7fc13a2a58240e80f87af217191c6222b6b3093840f8af1e219e2a5126e876a&quot;,
+    &quot;Source&quot; : &quot;/var/lib/docker/volumes/d7fc13a2a58240e80f87af217191c6222b6b3093840f8af1e219e2a5126e876a/_data&quot;,
+    &quot;Destination&quot; : {
+      &quot;path&quot; : &quot;/usr/src/app&quot;
+    },
+    &quot;Driver&quot; : &quot;local&quot;,
+    &quot;Mode&quot; : &quot;&quot;,
+    &quot;RW&quot; : true
+  } ],
+  &quot;GraphDriver&quot; : {
+    &quot;Name&quot; : &quot;overlay2&quot;,
+    &quot;Data&quot; : {
+      &quot;RootDir&quot; : null,
+      &quot;DeviceId&quot; : null,
+      &quot;DeviceName&quot; : null,
+      &quot;DeviceSize&quot; : null,
+      &quot;dir&quot; : null
+    }
+  },
+  &quot;Platform&quot; : &quot;linux&quot;
+}</inspect>
+    </com.nirima.jenkins.plugins.docker.action.DockerBuildAction>
+    <com.xpandit.plugins.xrayjenkins.services.enviromentvariables.XrayEnvironmentInjectAction plugin="xray-connector@2.3.1">
+      <newVariablesToAdd class="java.util.Collections$SynchronizedMap" serialization="custom">
+        <java.util.Collections_-SynchronizedMap>
+          <default>
+            <m>
+              <entry>
+                <string>XRAY_RAW_RESPONSE</string>
+                <string>{&quot;testExecIssue&quot;:{&quot;id&quot;:&quot;10219&quot;,&quot;key&quot;:&quot;GTT-25&quot;,&quot;self&quot;:&quot;http://host.docker.internal:8080/rest/api/2/issue/10219&quot;},&quot;testIssues&quot;:{&quot;success&quot;:[{&quot;id&quot;:&quot;10001&quot;,&quot;key&quot;:&quot;GTT-2&quot;,&quot;self&quot;:&quot;http://host.docker.internal:8080/rest/api/2/issue/10001&quot;}]}}</string>
+              </entry>
+              <entry>
+                <string>XRAY_TESTS</string>
+                <string>GTT-2</string>
+              </entry>
+              <entry>
+                <string>XRAY_IS_REQUEST_SUCCESSFUL</string>
+                <string>true</string>
+              </entry>
+              <entry>
+                <string>XRAY_TEST_EXECS</string>
+                <string>GTT-25</string>
+              </entry>
+              <entry>
+                <string>XRAY_ISSUES_MODIFIED</string>
+                <string>GTT-25;GTT-2</string>
+              </entry>
+            </m>
+            <mutex class="java.util.Collections$SynchronizedMap" reference="../../.."/>
+          </default>
+        </java.util.Collections_-SynchronizedMap>
+      </newVariablesToAdd>
+    </com.xpandit.plugins.xrayjenkins.services.enviromentvariables.XrayEnvironmentInjectAction>
+  </actions>
+  <queueId>80</queueId>
+  <timestamp>1601931826895</timestamp>
+  <startTime>1601931826903</startTime>
+  <result>FAILURE</result>
+  <duration>5006</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn>ruby-docker-slave-00026afj5wzcz</builtOn>
+  <workspace>/workspace/docker-ruby</workspace>
+  <hudsonVersion>2.249.1</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

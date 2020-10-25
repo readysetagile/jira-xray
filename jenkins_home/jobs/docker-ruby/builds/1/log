@@ -1,0 +1,17 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4LrpEmxGvNeL5yyqN+JmxcXNFp11qUpfpKbX1pOJlWENAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgyLCwqCrMKSw3BgCRLvIP3gAAAA==[0mruby-docker-slave-0000h88zqlqw3 on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins4686379435989115852.sh
++ cd /usr/src/app
++ bundle init
+Writing new Gemfile to /usr/src/app/Gemfile
++ bundle install
+The Gemfile specifies no dependencies
+Resolving dependencies...
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format html --out output/report.html
+No such file or directory @ rb_sysopen - output/report.html
+Error creating formatter: html (Errno::ENOENT)
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

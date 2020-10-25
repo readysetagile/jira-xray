@@ -1,0 +1,46 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4P5qXE6MQIPmtN0ia/Q1jH7TPZNJAela0doAoXIVRsneAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgKCpNL8lPr8qvAgAC6Yzi3gAAAA==[0mruby-docker-slave-0000rugtogzoz on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins7164228674285011473.sh
++ ls -lF /var
+total 40
+drwxr-xr-x 3 root root  4096 Oct  2 19:38 atlassian/
+drwxr-xr-x 2 root root  4096 Jul 10 21:04 backups/
+drwxr-xr-x 1 root root  4096 Sep 10 01:00 cache/
+drwxr-xr-x 1 root root  4096 Oct  1 15:28 lib/
+drwxrwsr-x 2 root staff 4096 Jul 10 21:04 local/
+lrwxrwxrwx 1 root root     9 Sep  8 07:00 lock -> /run/lock/
+drwxr-xr-x 1 root root  4096 Sep 10 01:00 log/
+drwxrwsr-x 2 root mail  4096 Sep  8 07:00 mail/
+drwxr-xr-x 2 root root  4096 Sep  8 07:00 opt/
+lrwxrwxrwx 1 root root     4 Sep  8 07:00 run -> /run/
+drwxr-xr-x 2 root root  4096 Sep  8 07:00 spool/
+drwxrwxrwt 2 root root  4096 Jul 10 21:04 tmp/
+FATAL: java.io.IOException: Unexpected termination of the channel
+java.io.EOFException
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2736)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3211)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:896)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:358)
+	at hudson.remoting.ObjectInputStreamEx.<init>(ObjectInputStreamEx.java:49)
+	at hudson.remoting.Command.readFrom(Command.java:142)
+	at hudson.remoting.Command.readFrom(Command.java:128)
+	at hudson.remoting.AbstractSynchronousByteArrayCommandTransport.read(AbstractSynchronousByteArrayCommandTransport.java:35)
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:63)
+Caused: java.io.IOException: Unexpected termination of the channel
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:77)
+Also:   hudson.remoting.Channel$CallSiteStackTrace: Remote call to ruby-docker-slave-0000rugtogzoz
+		at hudson.remoting.Channel.attachCallSiteStackTrace(Channel.java:1800)
+		at hudson.remoting.Request.call(Request.java:198)
+		at hudson.remoting.Channel.call(Channel.java:1000)
+		at hudson.Launcher$RemoteLauncher.kill(Launcher.java:1147)
+		at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:510)
+		at hudson.model.Run.execute(Run.java:1894)
+		at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+		at hudson.model.ResourceController.execute(ResourceController.java:97)
+		at hudson.model.Executor.run(Executor.java:428)
+Caused: hudson.remoting.RequestAbortedException
+	at hudson.remoting.Request.abort(Request.java:344)
+	at hudson.remoting.Channel.terminate(Channel.java:1085)
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:94)
+Finished: FAILURE

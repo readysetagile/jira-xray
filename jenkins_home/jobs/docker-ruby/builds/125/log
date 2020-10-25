@@ -1,0 +1,73 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4Aj/WqKEp7BQU+lALyS/GjZm/tTi/d7jEyyASlTj4br6AAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA6Oc4twMS6PM7CIAEaEnq94AAAA=[0mruby-docker-slave-0002lsmh92ikr on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins4408069721021714503.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: 
+XRAY_TEST_EXECS: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_RAW_RESPONSE: 
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins18016518778385134847.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+Ambiguous match of "I will see 15.689 in the Gallons field":
+
+features/step_definitions/xray_steps.rb:50:in `/^I will see (\d+)\.(\d+) in the (.+) field$/'
+features/step_definitions/xray_steps.rb:58:in `/^I will see (.+) in the (.+) field$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)
+/usr/lib/ruby/vendor_ruby/cucumber/step_match_search.rb:19:in `call'
+/usr/lib/ruby/2.5.0/delegate.rb:83:in `method_missing'
+/usr/lib/ruby/vendor_ruby/cucumber/step_match_search.rb:61:in `call'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:61:in `matches'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:45:in `result'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:36:in `find_match'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:32:in `attempt_to_activate'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:28:in `map'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:28:in `new_test_steps'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:22:in `test_case'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/activate_steps.rb:11:in `test_case'
+/usr/lib/ruby/vendor_ruby/cucumber/core/test/case.rb:23:in `describe_to'
+/usr/lib/ruby/vendor_ruby/cucumber/filters/quit.rb:11:in `test_case'
+/usr/lib/ruby/vendor_ruby/cucumber/core/test/case.rb:23:in `describe_to'
+/usr/lib/ruby/vendor_ruby/cucumber/core/test/filters/locations_filter.rb:17:in `block in done'
+/usr/lib/ruby/vendor_ruby/cucumber/core/test/filters/locations_filter.rb:16:in `each'
+/usr/lib/ruby/vendor_ruby/cucumber/core/test/filters/locations_filter.rb:16:in `done'
+/usr/lib/ruby/vendor_ruby/cucumber/core/filter.rb:61:in `done'
+/usr/lib/ruby/vendor_ruby/cucumber/core/test/filters/tag_filter.rb:18:in `done'
+/usr/lib/ruby/vendor_ruby/cucumber/core/compiler.rb:23:in `done'
+/usr/lib/ruby/vendor_ruby/cucumber/core/gherkin/parser.rb:35:in `done'
+/usr/lib/ruby/vendor_ruby/cucumber/core.rb:29:in `parse'
+/usr/lib/ruby/vendor_ruby/cucumber/core.rb:18:in `compile'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime.rb:67:in `run!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:32:in `execute!'
+/usr/bin/cucumber:7:in `<main>'
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+ERROR: Step ‘Xray: Results Import Task’ failed: Unable to confirm Result of the upload..... Upload Failed! Status:400 Response:{"error":"No content to map to Object due to end of input"}
+Finished: FAILURE

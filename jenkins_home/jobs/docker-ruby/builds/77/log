@@ -1,0 +1,59 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4EkxnL0nQkIneDI2AMGTUzYKY4FoJ8c8Yz9rOxm9oqYEAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDAyOzxLQs0/Kq5CoAQ/NSjN4AAAA=[0mruby-docker-slave-00026afj5wzcz on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins6364548441901975008.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_RAW_RESPONSE: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TEST_EXECS: 
+XRAY_TESTS: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins11169579292780158344.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+/var/atlassian/application-data/jira/src/ruby-cucumber-example/features/step_definitions/xray_steps.rb:19: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+  Actions builder = new Actions($driver);
+                        ^~~~~~~ (SyntaxError)
+/usr/lib/ruby/vendor_ruby/cucumber/rb_support/rb_language.rb:96:in `load'
+/usr/lib/ruby/vendor_ruby/cucumber/rb_support/rb_language.rb:96:in `load_code_file'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:142:in `load_file'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:84:in `block in load_files!'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:83:in `each'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:83:in `load_files!'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime.rb:253:in `load_step_definitions'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime.rb:61:in `run!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:32:in `execute!'
+/usr/bin/cucumber:7:in `<main>'
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10219","key":"GTT-25","self":"http://host.docker.internal:8080/rest/api/2/issue/10219"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10219","key":"GTT-25","self":"http://host.docker.internal:8080/rest/api/2/issue/10219"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"}]}}
+XRAY_ISSUES_MODIFIED: GTT-25;GTT-2
+XRAY_TEST_EXECS: GTT-25
+XRAY_TESTS: GTT-2
+XRAY_IS_REQUEST_SUCCESSFUL: true
+Finished: FAILURE

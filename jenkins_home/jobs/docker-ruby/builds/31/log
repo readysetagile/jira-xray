@@ -1,0 +1,10 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4AHxsz1sOBW5Sn7oLVrXxN6cXEtTbFTgQ91y/fKG9ZDiAAAAsx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgAOotMcwvMcsCAG4GTCTeAAAA[0mruby-docker-slave-0000solt1ot6j on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins16136495360866287124.sh
++ ls -lF /var/atlassian/application-data/jira/src/ruby-cucumber-example
+total 12
+-rw-r--rw- 1 root root   79 Oct  2 20:11 README.md
+drwxr-xrwx 4 root root 4096 Oct  2 20:11 features/
+drwxr-xrwx 2 root root 4096 Oct  2 20:11 output/
+Finished: SUCCESS

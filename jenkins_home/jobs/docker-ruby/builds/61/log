@@ -1,0 +1,62 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4IPDBo7c5vwh/duKMpQ6csKYS8Yefo6UdtY5oX7EDO/8AAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDAyPjPIOkxORCszwADsEYcN4AAAA=[0mruby-docker-slave-00023n0bacq6n on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins10306107534230509446.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_RAW_RESPONSE: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TEST_EXECS: 
+XRAY_TESTS: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins13091191428424255827.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format json --format html --format pretty --out output/report.json
+All but one formatter must use --out, only one can print to each stream (or STDOUT) (RuntimeError)
+/usr/lib/ruby/vendor_ruby/cucumber/cli/options.rb:296:in `check_formatter_stream_conflicts'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/options.rb:278:in `parse!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/configuration.rb:26:in `parse!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:65:in `block in configuration'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:64:in `tap'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:64:in `configuration'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:29:in `execute!'
+/usr/bin/cucumber:7:in `<main>'
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+ERROR: Build step failed with exception
+com.xpandit.plugins.xrayjenkins.exceptions.XrayJenkinsGenericException: File path is a directory or the file doesn't exist
+	at com.xpandit.plugins.xrayjenkins.task.XrayImportBuilder.getFile(XrayImportBuilder.java:422)
+	at com.xpandit.plugins.xrayjenkins.task.XrayImportBuilder.perform(XrayImportBuilder.java:522)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:112)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:741)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:690)
+	at hudson.model.Build$BuildExecution.post2(Build.java:186)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:635)
+	at hudson.model.Run.execute(Run.java:1919)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:428)
+Build step 'Xray: Results Import Task' marked build as failure
+Finished: FAILURE

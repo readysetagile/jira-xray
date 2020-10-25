@@ -1,0 +1,77 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>ruby-docker-slave</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#remove the old feature files
+echo &quot;remove the old feature files&quot;
+rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/*.feature</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <com.xpandit.plugins.xrayjenkins.task.XrayExportBuilder plugin="xray-connector@2.3.1">
+      <xrayInstance>
+        <configID>a4092efb-becd-4560-9b23-4a1f6ed77b92</configID>
+        <alias>local Jira Server</alias>
+        <serverAddress>http://host.docker.internal:8080/</serverAddress>
+        <hosting>SERVER</hosting>
+        <credentialId>Jira</credentialId>
+        <credentialResolver>
+          <credentialId>Jira</credentialId>
+          <run class="hudson.model.FreeStyleBuild" resolves-to="hudson.model.Run$Replacer">
+            <id>docker-ruby#150</id>
+          </run>
+          <username>john</username>
+          <password>{AQAAABAAAAAQ5bgesnRlLfOE6RBCEfEHNbbmWLvVL5ovLCGEF/TrMng=}</password>
+        </credentialResolver>
+      </xrayInstance>
+      <fields>
+        <entry>
+          <string>filePath</string>
+          <string>/var/atlassian/application-data/jira/src/ruby-cucumber-example/features</string>
+        </entry>
+        <entry>
+          <string>issues</string>
+          <string>GTT-4</string>
+        </entry>
+      </fields>
+      <serverInstance>SERVER-a4092efb-becd-4560-9b23-4a1f6ed77b92</serverInstance>
+      <issues>GTT-4</issues>
+      <filePath>/var/atlassian/application-data/jira/src/ruby-cucumber-example/features</filePath>
+    </com.xpandit.plugins.xrayjenkins.task.XrayExportBuilder>
+    <hudson.tasks.Shell>
+      <command>echo &quot;Execute the tests&quot;
+cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
+bundle install
+cucumber --expand --format json_pretty --out output/report.json</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <com.xpandit.plugins.xrayjenkins.task.XrayImportBuilder plugin="xray-connector@2.3.1">
+      <formatSuffix>/cucumber</formatSuffix>
+      <serverInstance>SERVER-a4092efb-becd-4560-9b23-4a1f6ed77b92</serverInstance>
+      <endpointName>/cucumber</endpointName>
+      <importFilePath>/var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json</importFilePath>
+      <dynamicFields>
+        <entry>
+          <string>importFilePath</string>
+          <string>/var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json</string>
+        </entry>
+      </dynamicFields>
+      <xrayInstance reference="../../../builders/com.xpandit.plugins.xrayjenkins.task.XrayExportBuilder/xrayInstance"/>
+      <endpoint>CUCUMBER</endpoint>
+    </com.xpandit.plugins.xrayjenkins.task.XrayImportBuilder>
+  </publishers>
+  <buildWrappers/>
+</project>

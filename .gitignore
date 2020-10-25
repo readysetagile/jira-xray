@@ -1,6 +1,27 @@
 # Ignore everything
 *
 
+# Don't ignore , so we can recurse into them
+!*/
+
 # But not these files...
 !.gitignore
 !README.md
+!docker-compose.yml
+
+#ignore the Jenkins plugins dir
+jenkins_home/plugins/**
+
+#don't ignore the source files for the automated testing solution, however, ignore the feature files.
+#the Jenkins job will extract the feature files from the Jira REST API 
+!jiraVolume/src/**
+jiraVolume/src/ruby-cucumber-example/features/*.feature
+
+#don't ignore the Jenkins jobs folder
+!jenkins_home/jobs/**
+
+#don't ignore the jenkins master config
+!jenkins_home/config.xml
+
+#don't ignore the jira backup
+!jiraVolume/jira-xray-backup.zip

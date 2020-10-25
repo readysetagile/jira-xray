@@ -1,0 +1,39 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4Gn6M87TProARyoeC0nOqUQY6Wapy6zRZM6kAEIOK+BEAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgKMjPqizIMS/KAgDAe2BT3gAAAA==[0mruby-docker-slave-0000pojypl7rj on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins4315391456475167456.sh
++ env
+JENKINS_HOME=/var/jenkins_home
+RUBY_MAJOR=2.7
+RUN_CHANGES_DISPLAY_URL=http://unconfigured-jenkins-location/job/docker-ruby/17/display/redirect?page=changes
+HOSTNAME=56ea4cea952a
+NODE_LABELS=ruby-docker-slave ruby-docker-slave-0000pojypl7rj
+HOME=/root
+HUDSON_COOKIE=5245bf3d-a0f4-439d-b711-3468791b3bc7
+JENKINS_SERVER_COOKIE=7b75b7942a569890
+BUNDLE_APP_CONFIG=/usr/local/bundle
+WORKSPACE=/workspace/docker-ruby
+NODE_NAME=ruby-docker-slave-0000pojypl7rj
+RUN_ARTIFACTS_DISPLAY_URL=http://unconfigured-jenkins-location/job/docker-ruby/17/display/redirect?page=artifacts
+EXECUTOR_NUMBER=0
+RUBY_VERSION=2.7.1
+RUN_TESTS_DISPLAY_URL=http://unconfigured-jenkins-location/job/docker-ruby/17/display/redirect?page=tests
+BUILD_DISPLAY_NAME=#17
+HUDSON_HOME=/var/jenkins_home
+JOB_BASE_NAME=docker-ruby
+PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+BUILD_ID=17
+BUILD_TAG=jenkins-docker-ruby-17
+LANG=C.UTF-8
+BUILD_NUMBER=17
+RUN_DISPLAY_URL=http://unconfigured-jenkins-location/job/docker-ruby/17/display/redirect
+HUDSON_SERVER_COOKIE=7b75b7942a569890
+GEM_HOME=/usr/local/bundle
+JOB_DISPLAY_URL=http://unconfigured-jenkins-location/job/docker-ruby/display/redirect
+RUBY_DOWNLOAD_SHA256=b224f9844646cc92765df8288a46838511c1cec5b550d8874bd4686a904fcee7
+JOB_NAME=docker-ruby
+PWD=/workspace/docker-ruby
+WORKSPACE_TMP=/workspace/docker-ruby@tmp
+BUNDLE_SILENCE_ROOT_WARNING=1
+DOCKER_CONTAINER_ID=56ea4cea952a1bd74c280dc1b1bf4604bc70da74db39e71f4a1b4ac7aadd7820
+Finished: SUCCESS

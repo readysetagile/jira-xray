@@ -1,0 +1,56 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4KJhI2cZhNr+ZRAMwNVW249y7CMrv9RaEE6H1PA0p6grAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA6PckoKUXItyizQAwVyI+N4AAAA=[0mruby-docker-slave-0002mtpdm8w8f on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins8404976207287621621.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: 
+XRAY_TEST_EXECS: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_RAW_RESPONSE: 
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins9229895111835392344.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+Fetching gem metadata from https://rubygems.org/.
+Using bundler 2.1.4
+Fetching minitest 5.14.2
+Installing minitest 5.14.2
+Bundle complete! 1 Gemfile dependency, 2 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --no-plugins --require features --format pretty --format json --out output/report.json
+invalid option: --no-plugins (OptionParser::InvalidOption)
+/usr/lib/ruby/vendor_ruby/cucumber/cli/options.rb:271:in `parse!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/configuration.rb:26:in `parse!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:65:in `block in configuration'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:64:in `tap'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:64:in `configuration'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:29:in `execute!'
+/usr/bin/cucumber:7:in `<main>'
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10324","key":"GTT-89","self":"http://host.docker.internal:8080/rest/api/2/issue/10324"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"},{"id":"10305","key":"GTT-70","self":"http://host.docker.internal:8080/rest/api/2/issue/10305"},{"id":"10306","key":"GTT-71","self":"http://host.docker.internal:8080/rest/api/2/issue/10306"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: GTT-70;GTT-2;GTT-65;GTT-71
+XRAY_TEST_EXECS: GTT-89
+XRAY_ISSUES_MODIFIED: GTT-89;GTT-70;GTT-2;GTT-65;GTT-71
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10324","key":"GTT-89","self":"http://host.docker.internal:8080/rest/api/2/issue/10324"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"},{"id":"10305","key":"GTT-70","self":"http://host.docker.internal:8080/rest/api/2/issue/10305"},{"id":"10306","key":"GTT-71","self":"http://host.docker.internal:8080/rest/api/2/issue/10306"}]}}
+Finished: FAILURE

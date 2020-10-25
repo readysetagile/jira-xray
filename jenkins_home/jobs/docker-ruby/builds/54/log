@@ -1,0 +1,69 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4IsUnfAuNID+5dWdn3AezoPGICX9SReNHIc4aSbTfG8GAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA8PyvBIT45ys9DwA/z6h294AAAA=[0mruby-docker-slave-0001wnt43ljgn on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins3875946292918946226.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f -r /var/atlassian/application-data/jira/src/ruby-cucumber-example/exportedfeatures
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/exportedfeatures
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_TESTS: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_RAW_RESPONSE: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TEST_EXECS: 
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins17563185374578304131.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require exportedfeatures --require features --format pretty --format html --out output/report.html
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+@GTT-3
+Feature: Fields are formatted correctly on entry screen
+
+  @GTT-2 @GTT-1 @GTT-4
+  Scenario Outline: User entry for gallons field is formatted correctly # features/1_GTT-3.feature:6
+    Given I enter <user_entry> in the Gallons field                     # features/1_GTT-3.feature:7
+    When I lose focus from the Gallons Field                            # features/1_GTT-3.feature:8
+    Then I will see <formatted_entry> in the Gallons field              # features/1_GTT-3.feature:9
+
+    Examples: 
+      | user_entry | formatted_entry |
+      | 15689      | 15.689          |
+      | 9806       | 9.806           |
+
+Feature: Facebook Login Test
+
+  Scenario: LogIn            # features/instructions.feature:3
+    Then I LogIn in Facebook # features/step_definitions/steps.rb:1
+
+3 scenarios (2 undefined, 1 passed)
+7 steps (6 undefined, 1 passed)
+0m3.940s
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given(/^I enter (\d+) in the Gallons field$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I lose focus from the Gallons Field$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I will see (\d+)\.(\d+) in the Gallons field$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Finished: SUCCESS

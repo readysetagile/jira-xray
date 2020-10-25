@@ -1,0 +1,28 @@
+version: '3'
+services:
+  jira:
+    image: atlassian/jira-software
+    restart: always
+    privileged: true
+    user: root
+    volumes:
+      - /home/john/repos/jira-xray/jiraVolume:/var/atlassian/application-data/jira
+    ports:
+      - 8080:8080
+    networks:
+      - back
+  jenkins:
+    image: jenkins/jenkins:lts
+    restart: always
+    privileged: true
+    user: root
+    volumes:
+      - /home/john/repos/jira-xray/jenkins_home:/var/jenkins_home
+    ports:
+      - 9090:8080
+      - 50000:50000
+    networks:
+      - back  
+networks:
+  back:
+  

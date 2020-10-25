@@ -1,0 +1,92 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4Jb9tAn57aDFwzDnEnS0B7Owb+fdKm/4lTGTXuC+UcVJAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDAyPzfMPUZKMiU3MA/ZSBaN4AAAA=[0mruby-docker-slave-00027o1ec2r57 on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins16370855788226191175.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_RAW_RESPONSE: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TEST_EXECS: 
+XRAY_TESTS: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins10103799614263355809.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+@GTT-3
+Feature: Fields are formatted correctly on entry screen
+
+  Background:                                  # features/1_GTT-3_GTT-7.feature:4
+      #@GTT-7
+    Given I navigate to the GasTrak Entry page # features/step_definitions/xray_steps.rb:3
+    Then I will see the GasTrak entry page     # features/step_definitions/xray_steps.rb:7
+
+  @GTT-2 @GTT-1 @GTT-4
+  Scenario Outline: User entry for gallons field is formatted correctly # features/1_GTT-3_GTT-7.feature:12
+    Given I enter <user_entry> in the Gallons field                     # features/1_GTT-3_GTT-7.feature:13
+    When I lose focus from the Gallons Field                            # features/1_GTT-3_GTT-7.feature:14
+    Then I will see <formatted_entry> in the Gallons field              # features/1_GTT-3_GTT-7.feature:15
+
+    Examples: 
+      | user_entry | formatted_entry |
+      |Gallons:  Expected = 15.689, Actual = 
+ 15689      | 15.689          |
+      uninitialized constant Minitest::Assertion
+      Did you mean?  Minitest::Assertions (NameError)
+      ./features/step_definitions/xray_steps.rb:28:in `/^I will see (\d+)\.(\d+) in the Gallons field$/'
+      features/1_GTT-3_GTT-7.feature:19:in `Then I will see 15.689 in the Gallons field'
+      features/1_GTT-3_GTT-7.feature:15:in `Then I will see <formatted_entry> in the Gallons field'
+      |Gallons:  Expected = 9.806, Actual = 
+ 9806       | 9.806           |
+      uninitialized constant Minitest::Assertion
+      Did you mean?  Minitest::Assertions (NameError)
+      ./features/step_definitions/xray_steps.rb:28:in `/^I will see (\d+)\.(\d+) in the Gallons field$/'
+      features/1_GTT-3_GTT-7.feature:20:in `Then I will see 9.806 in the Gallons field'
+      features/1_GTT-3_GTT-7.feature:15:in `Then I will see <formatted_entry> in the Gallons field'
+      |Gallons:  Expected = 9.805, Actual = 
+ 9806       | 9.805           |
+      uninitialized constant Minitest::Assertion
+      Did you mean?  Minitest::Assertions (NameError)
+      ./features/step_definitions/xray_steps.rb:28:in `/^I will see (\d+)\.(\d+) in the Gallons field$/'
+      features/1_GTT-3_GTT-7.feature:21:in `Then I will see 9.805 in the Gallons field'
+      features/1_GTT-3_GTT-7.feature:15:in `Then I will see <formatted_entry> in the Gallons field'
+
+Failing Scenarios:
+cucumber features/1_GTT-3_GTT-7.feature:19 # Scenario Outline: User entry for gallons field is formatted correctly, Examples (#1)
+cucumber features/1_GTT-3_GTT-7.feature:20 # Scenario Outline: User entry for gallons field is formatted correctly, Examples (#2)
+cucumber features/1_GTT-3_GTT-7.feature:21 # Scenario Outline: User entry for gallons field is formatted correctly, Examples (#3)
+
+3 scenarios (3 failed)
+15 steps (3 failed, 12 passed)
+0m1.088s
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10228","key":"GTT-34","self":"http://host.docker.internal:8080/rest/api/2/issue/10228"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10228","key":"GTT-34","self":"http://host.docker.internal:8080/rest/api/2/issue/10228"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"}]}}
+XRAY_ISSUES_MODIFIED: GTT-34;GTT-2
+XRAY_TEST_EXECS: GTT-34
+XRAY_TESTS: GTT-2
+XRAY_IS_REQUEST_SUCCESSFUL: true
+Finished: FAILURE

@@ -1,0 +1,67 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4DJaAo6BvGFl553r3CThKHYfVklRdFNRx0xy1pKgMBo0AAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDAyPjHJNMk+TizCQAxotXa94AAAA=[0mruby-docker-slave-00023l4i4csib on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins16057340699602591130.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_RAW_RESPONSE: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TEST_EXECS: 
+XRAY_TESTS: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins13302943914856496758.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+wrong number of arguments (given 0, expected 2..3) (ArgumentError)
+/var/atlassian/application-data/jira/src/ruby-cucumber-example/features/step_definitions/xray_steps.rb:1:in `test'
+/var/atlassian/application-data/jira/src/ruby-cucumber-example/features/step_definitions/xray_steps.rb:1:in `<top (required)>'
+/usr/lib/ruby/vendor_ruby/cucumber/rb_support/rb_language.rb:96:in `load'
+/usr/lib/ruby/vendor_ruby/cucumber/rb_support/rb_language.rb:96:in `load_code_file'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:142:in `load_file'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:84:in `block in load_files!'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:83:in `each'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime/support_code.rb:83:in `load_files!'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime.rb:253:in `load_step_definitions'
+/usr/lib/ruby/vendor_ruby/cucumber/runtime.rb:61:in `run!'
+/usr/lib/ruby/vendor_ruby/cucumber/cli/main.rb:32:in `execute!'
+/usr/bin/cucumber:7:in `<main>'
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+ERROR: Build step failed with exception
+com.xpandit.plugins.xrayjenkins.exceptions.XrayJenkinsGenericException: File path is a directory or the file doesn't exist
+	at com.xpandit.plugins.xrayjenkins.task.XrayImportBuilder.getFile(XrayImportBuilder.java:422)
+	at com.xpandit.plugins.xrayjenkins.task.XrayImportBuilder.perform(XrayImportBuilder.java:522)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:112)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:741)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:690)
+	at hudson.model.Build$BuildExecution.post2(Build.java:186)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:635)
+	at hudson.model.Run.execute(Run.java:1919)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:428)
+Build step 'Xray: Results Import Task' marked build as failure
+Finished: FAILURE

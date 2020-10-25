@@ -1,0 +1,45 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4BrDK7zadaFxDoCrgGvQAYhLa8b4nU8LsggRJ/oRy/JHAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDAyNjs8TCwuLK5CwA5kdwCN4AAAA=[0mruby-docker-slave-000236aqqsycj on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins8325823690330396885.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f -r /var/atlassian/application-data/jira/src/ruby-cucumber-example/exportedfeatures
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/exportedfeatures
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_RAW_RESPONSE: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_TEST_EXECS: 
+XRAY_TESTS: 
+XRAY_IS_REQUEST_SUCCESSFUL: true
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins6814868486642201051.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require exportedfeatures --require features --format json --out output/report.json
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10203","key":"GTT-9","self":"http://host.docker.internal:8080/rest/api/2/issue/10203"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10203","key":"GTT-9","self":"http://host.docker.internal:8080/rest/api/2/issue/10203"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"}]}}
+XRAY_ISSUES_MODIFIED: GTT-9;GTT-2
+XRAY_TEST_EXECS: GTT-9
+XRAY_TESTS: GTT-2
+XRAY_IS_REQUEST_SUCCESSFUL: true
+Finished: SUCCESS

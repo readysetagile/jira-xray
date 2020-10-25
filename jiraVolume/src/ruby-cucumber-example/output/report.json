@@ -1,0 +1,1945 @@
+[
+  {
+    "uri": "features/1_GTT-3_GTT-7.feature",
+    "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen",
+    "keyword": "Feature",
+    "name": "All fields are automatically formatted correctly on the user screen",
+    "description": "",
+    "line": 2,
+    "tags": [
+      {
+        "name": "@GTT-3",
+        "line": 1
+      }
+    ],
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 888145000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17233000
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-mileage-field-is-formatted-correctly;;2",
+        "keyword": "Scenario Outline",
+        "name": "User entry for mileage field is formatted correctly",
+        "description": "",
+        "line": 24,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-70",
+            "line": 16
+          },
+          {
+            "name": "@GTT-1",
+            "line": 16
+          },
+          {
+            "name": "@GTT-4",
+            "line": 16
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 689 in the Mileage field",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 183474600
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Mileage Field",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46820700
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 689 in the Mileage field",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35942200
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77442800
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6210000
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-mileage-field-is-formatted-correctly;;3",
+        "keyword": "Scenario Outline",
+        "name": "User entry for mileage field is formatted correctly",
+        "description": "",
+        "line": 25,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-70",
+            "line": 16
+          },
+          {
+            "name": "@GTT-1",
+            "line": 16
+          },
+          {
+            "name": "@GTT-4",
+            "line": 16
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 7382 in the Mileage field",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 176964300
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Mileage Field",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46885400
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 7382 in the Mileage field",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35453600
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45903800
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4193100
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-mileage-field-is-formatted-correctly;;4",
+        "keyword": "Scenario Outline",
+        "name": "User entry for mileage field is formatted correctly",
+        "description": "",
+        "line": 26,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-70",
+            "line": 16
+          },
+          {
+            "name": "@GTT-1",
+            "line": 16
+          },
+          {
+            "name": "@GTT-4",
+            "line": 16
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 21378 in the Mileage field",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 128555500
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Mileage Field",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85830300
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 21378 in the Mileage field",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13045400
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36514900
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4355600
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-gallons-field-is-formatted-correctly;;2",
+        "keyword": "Scenario Outline",
+        "name": "User entry for gallons field is formatted correctly",
+        "description": "",
+        "line": 38,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-2",
+            "line": 30
+          },
+          {
+            "name": "@GTT-1",
+            "line": 30
+          },
+          {
+            "name": "@GTT-4",
+            "line": 30
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 15689 in the Gallons field",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 168267300
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Gallons Field",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38708100
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 15.689 in the Gallons field",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27247700
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38166000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6148300
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-gallons-field-is-formatted-correctly;;3",
+        "keyword": "Scenario Outline",
+        "name": "User entry for gallons field is formatted correctly",
+        "description": "",
+        "line": 39,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-2",
+            "line": 30
+          },
+          {
+            "name": "@GTT-1",
+            "line": 30
+          },
+          {
+            "name": "@GTT-4",
+            "line": 30
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 9806 in the Gallons field",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136446100
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Gallons Field",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61438200
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 9.806 in the Gallons field",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28250300
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52061400
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6117000
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-gallons-field-is-formatted-correctly;;4",
+        "keyword": "Scenario Outline",
+        "name": "User entry for gallons field is formatted correctly",
+        "description": "",
+        "line": 40,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-2",
+            "line": 30
+          },
+          {
+            "name": "@GTT-1",
+            "line": 30
+          },
+          {
+            "name": "@GTT-4",
+            "line": 30
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 9860 in the Gallons field",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137523900
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Gallons Field",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44824900
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 9.860 in the Gallons field",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26714600
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40270600
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5639700
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-price-per-gallon-field-is-formatted-correctly;;2",
+        "keyword": "Scenario Outline",
+        "name": "User entry for Price Per Gallon field is formatted correctly",
+        "description": "",
+        "line": 52,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-65",
+            "line": 44
+          },
+          {
+            "name": "@GTT-1",
+            "line": 44
+          },
+          {
+            "name": "@GTT-4",
+            "line": 44
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 216 in the Price Per Gallon field",
+            "line": 52,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147410300
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Price Per Gallon Field",
+            "line": 52,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31707200
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 2.16 in the Price Per Gallon field",
+            "line": 52,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15908700
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27498700
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4461200
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-price-per-gallon-field-is-formatted-correctly;;3",
+        "keyword": "Scenario Outline",
+        "name": "User entry for Price Per Gallon field is formatted correctly",
+        "description": "",
+        "line": 53,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-65",
+            "line": 44
+          },
+          {
+            "name": "@GTT-1",
+            "line": 44
+          },
+          {
+            "name": "@GTT-4",
+            "line": 44
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 193 in the Price Per Gallon field",
+            "line": 53,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 130487300
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Price Per Gallon Field",
+            "line": 53,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 43915900
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 1.93 in the Price Per Gallon field",
+            "line": 53,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19481700
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54823300
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3829300
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-price-per-gallon-field-is-formatted-correctly;;4",
+        "keyword": "Scenario Outline",
+        "name": "User entry for Price Per Gallon field is formatted correctly",
+        "description": "",
+        "line": 54,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-65",
+            "line": 44
+          },
+          {
+            "name": "@GTT-1",
+            "line": 44
+          },
+          {
+            "name": "@GTT-4",
+            "line": 44
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 304 in the Price Per Gallon field",
+            "line": 54,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 130011000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Price Per Gallon Field",
+            "line": 54,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58723900
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 3.04 in the Price Per Gallon field",
+            "line": 54,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20440200
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 67189100
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4115800
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-comments-field-is-formatted-correctly;;2",
+        "keyword": "Scenario Outline",
+        "name": "User entry for comments field is formatted correctly",
+        "description": "",
+        "line": 66,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-71",
+            "line": 58
+          },
+          {
+            "name": "@GTT-1",
+            "line": 58
+          },
+          {
+            "name": "@GTT-4",
+            "line": 58
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter the phrase \"these are some comments\" in the Comments field",
+            "line": 66,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137512900
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Comments Field",
+            "line": 66,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41271900
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the phrase \"these are some comments\" in the Comments field",
+            "line": 66,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25690000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45494400
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3965400
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-comments-field-is-formatted-correctly;;3",
+        "keyword": "Scenario Outline",
+        "name": "User entry for comments field is formatted correctly",
+        "description": "",
+        "line": 67,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-71",
+            "line": 58
+          },
+          {
+            "name": "@GTT-1",
+            "line": 58
+          },
+          {
+            "name": "@GTT-4",
+            "line": 58
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter the phrase \"speedway on main st.\" in the Comments field",
+            "line": 67,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 154985700
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Comments Field",
+            "line": 67,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47078700
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the phrase \"speedway on main st.\" in the Comments field",
+            "line": 67,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20772700
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically formatted correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I reduce keystrokes",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60647900
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3122600
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-automatically-formatted-correctly-on-the-user-screen;user-entry-for-comments-field-is-formatted-correctly;;4",
+        "keyword": "Scenario Outline",
+        "name": "User entry for comments field is formatted correctly",
+        "description": "",
+        "line": 68,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-3",
+            "line": 1
+          },
+          {
+            "name": "@GTT-71",
+            "line": 58
+          },
+          {
+            "name": "@GTT-1",
+            "line": 58
+          },
+          {
+            "name": "@GTT-4",
+            "line": 58
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter the phrase \"john's discount\" in the Comments field",
+            "line": 68,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137895300
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I lose focus from the Comments Field",
+            "line": 68,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 43061100
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the phrase \"john's discount\" in the Comments field",
+            "line": 68,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24590400
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/2_GTT-97_GTT-7.feature",
+    "id": "all-fields-are-calculated-correctly-on-the-user-screen",
+    "keyword": "Feature",
+    "name": "All fields are calculated correctly on the user screen",
+    "description": "",
+    "line": 2,
+    "tags": [
+      {
+        "name": "@GTT-97",
+        "line": 1
+      }
+    ],
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically calculated correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I can check the accuracy of the transaction",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37700100
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4701000
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-calculated-correctly-on-the-user-screen;total-field-is-calculated-correctly;;2",
+        "keyword": "Scenario Outline",
+        "name": "Total field is calculated correctly",
+        "description": "",
+        "line": 25,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-97",
+            "line": 1
+          },
+          {
+            "name": "@GTT-98",
+            "line": 16
+          },
+          {
+            "name": "@GTT-100",
+            "line": 16
+          },
+          {
+            "name": "@GTT-4",
+            "line": 16
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 189 in the Price Per Gallon field",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 96735600
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter 18006 in the Gallons field",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94737100
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the Calculate button",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 713982000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 34.19 in the Total field",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21489100
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically calculated correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I can check the accuracy of the transaction",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31522200
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3640100
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-calculated-correctly-on-the-user-screen;total-field-is-calculated-correctly;;3",
+        "keyword": "Scenario Outline",
+        "name": "Total field is calculated correctly",
+        "description": "",
+        "line": 26,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-97",
+            "line": 1
+          },
+          {
+            "name": "@GTT-98",
+            "line": 16
+          },
+          {
+            "name": "@GTT-100",
+            "line": 16
+          },
+          {
+            "name": "@GTT-4",
+            "line": 16
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 216 in the Price Per Gallon field",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72892700
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter 17323 in the Gallons field",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70879100
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the Calculate button",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 216375400
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 37.57 in the Total field",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13004700
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 9,
+        "type": "background",
+        "comments": [
+          {
+            "value": "#As a User",
+            "line": 3
+          },
+          {
+            "value": "#",
+            "line": 4
+          },
+          {
+            "value": "#I want fields on the GasTrak entry screen to be automatically calculated correctly",
+            "line": 5
+          },
+          {
+            "value": "#",
+            "line": 6
+          },
+          {
+            "value": "#so that I can check the accuracy of the transaction",
+            "line": 7
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I navigate to the GasTrak Entry page",
+            "line": 11,
+            "comments": [
+              {
+                "value": "#@GTT-7",
+                "line": 10
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39349400
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the GasTrak entry page",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4927900
+            }
+          }
+        ]
+      },
+      {
+        "id": "all-fields-are-calculated-correctly-on-the-user-screen;total-field-is-calculated-correctly;;4",
+        "keyword": "Scenario Outline",
+        "name": "Total field is calculated correctly",
+        "description": "",
+        "line": 27,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@GTT-97",
+            "line": 1
+          },
+          {
+            "name": "@GTT-98",
+            "line": 16
+          },
+          {
+            "name": "@GTT-100",
+            "line": 16
+          },
+          {
+            "name": "@GTT-4",
+            "line": 16
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I enter 154 in the Price Per Gallon field",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76560000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter 18232 in the Gallons field",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 74723600
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the Calculate button",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 193731100
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see 28.24 in the Total field",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/xray_steps.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12289500
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

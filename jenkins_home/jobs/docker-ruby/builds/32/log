@@ -1,0 +1,32 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4P3h3BygQsUu50i254oo45lbfdYyAGrlS9mghG06yYY7AAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMgKC40yM0qqrAwBgDFuU/l3gAAAA==[0mruby-docker-slave-0000sq0mjrx83 on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins6562688184921921739.sh
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle init
+Writing new Gemfile to /var/atlassian/application-data/jira/src/ruby-cucumber-example/Gemfile
++ bundle install
+The Gemfile specifies no dependencies
+Resolving dependencies...
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format html --out output/report.html
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+Feature: Facebook Login Test
+
+  Scenario: LogIn            # features/instructions.feature:3
+    Then I LogIn in Facebook # features/step_definitions/steps.rb:1
+      no such element: Unable to locate element: {"method":"css selector","selector":"#loginbutton"}
+        (Session info: headless chrome=85.0.4183.121) (Selenium::WebDriver::Error::NoSuchElementError)
+      #0 0x55e02fa04a39 <unknown>
+      ./features/step_definitions/steps.rb:9:in `/^I LogIn in Facebook$/'
+      features/instructions.feature:4:in `Then I LogIn in Facebook'
+
+Failing Scenarios:
+cucumber features/instructions.feature:3 # Scenario: LogIn
+
+1 scenario (1 failed)
+1 step (1 failed)
+0m3.206s
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

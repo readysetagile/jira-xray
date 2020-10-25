@@ -1,0 +1,27 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4JBhwFIDS7qF/tanx+vj4ycMOo2Ht8bOYFrmpIJJd23qAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA8My8xLzKoMMizIAfjfU+d4AAAA=[0mruby-docker-slave-0001v7t7z0h8v on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins13620802083692967309.sh
++ rm -f *.feature
++ curl -u john:44145Jar --remote-name --remote-header-name http://host.docker.internal:8080/rest/raven/1.0/export/test?keys=GTT-4
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   392  100   392    0     0   6030      0 --:--:-- --:--:-- --:--:--  6125
+curl: Saved to filename '1.feature'
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins5103847735962075547.sh
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+The Gemfile specifies no dependencies
+Bundle complete! 0 Gemfile dependencies, 1 gem now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
++ cucumber --require features --format pretty --format html --out output/report.html
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/platform.rb:154: warning: Insecure world writable dir /usr/local/bundle in PATH, mode 040777
+Feature: Facebook Login Test
+
+  Scenario: LogIn            # features/instructions.feature:3
+    Then I LogIn in Facebook # features/step_definitions/steps.rb:1
+
+1 scenario (1 passed)
+1 step (1 passed)
+0m5.249s
+Finished: SUCCESS

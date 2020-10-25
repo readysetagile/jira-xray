@@ -1,0 +1,49 @@
+Started by user [8mha:////4GaMbEXde/ibvd2Kb8qK18zeVw7leJCNytEFacrwkuLJAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYu/dLi1CL9rPyMPACHEHk+vwAAAA==[0mjohn riley
+Running as SYSTEM
+Building remotely on [8mha:////4DRK8fckthMUkUpDVyz7ep+KXB5GyChMqrjedAGSwg7bAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzNEgZN/eT83ILSktQi/aLSpErdlPzk7NQi3eKcxLJUXQMDA6PcnPKqbIsyI2MAXPnBxN4AAAA=[0mruby-docker-slave-0002mlwzk8v23 on docker (ruby-docker-slave) in workspace /workspace/docker-ruby
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins9953756326619480263.sh
++ echo remove the old feature files
+remove the old feature files
++ rm -f /var/atlassian/application-data/jira/src/ruby-cucumber-example/features/1_GTT-3_GTT-7.feature
+Starting XRAY: Cucumber Features Export Task...
+##########################################################
+####   Xray is exporting the feature files  ####
+##########################################################
+Issues: GTT-4
+Will save the feature files in: /var/atlassian/application-data/jira/src/ruby-cucumber-example/features
+###################### Unzipping file ####################
+###################### Unzipped file #####################
+Successfully exported the Cucumber features
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: 
+XRAY_TEST_EXECS: 
+XRAY_ISSUES_MODIFIED: 
+XRAY_RAW_RESPONSE: 
+[docker-ruby] $ /bin/sh -xe /tmp/jenkins4032547365943609395.sh
++ echo Execute the tests
+Execute the tests
++ cd /var/atlassian/application-data/jira/src/ruby-cucumber-example
++ bundle install
+
+[!] There was an error parsing `Gemfile`: Undefined local variable or method `install' for Gemfile. Bundler cannot continue.
+
+ #  from /var/atlassian/application-data/jira/src/ruby-cucumber-example/Gemfile:8
+ #  -------------------------------------------
+ #  # gem "rails"
+ >  gem install 'minitest'
+ #  -------------------------------------------
+Build step 'Execute shell' marked build as failure
+Starting XRAY: Results Import Task...
+##########################################################
+####     Xray is importing the execution results      ####
+##########################################################
+File: /var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json
+Starting to import results from report.json
+Response: (200) {"testExecIssue":{"id":"10319","key":"GTT-84","self":"http://host.docker.internal:8080/rest/api/2/issue/10319"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"},{"id":"10305","key":"GTT-70","self":"http://host.docker.internal:8080/rest/api/2/issue/10305"},{"id":"10306","key":"GTT-71","self":"http://host.docker.internal:8080/rest/api/2/issue/10306"}]}}
+Successfully imported Cucumber JSON results from report.json
+XRAY_IS_REQUEST_SUCCESSFUL: true
+XRAY_TESTS: GTT-70;GTT-2;GTT-65;GTT-71
+XRAY_TEST_EXECS: GTT-84
+XRAY_ISSUES_MODIFIED: GTT-84;GTT-70;GTT-2;GTT-65;GTT-71
+XRAY_RAW_RESPONSE: {"testExecIssue":{"id":"10319","key":"GTT-84","self":"http://host.docker.internal:8080/rest/api/2/issue/10319"},"testIssues":{"success":[{"id":"10001","key":"GTT-2","self":"http://host.docker.internal:8080/rest/api/2/issue/10001"},{"id":"10300","key":"GTT-65","self":"http://host.docker.internal:8080/rest/api/2/issue/10300"},{"id":"10305","key":"GTT-70","self":"http://host.docker.internal:8080/rest/api/2/issue/10305"},{"id":"10306","key":"GTT-71","self":"http://host.docker.internal:8080/rest/api/2/issue/10306"}]}}
+Finished: FAILURE

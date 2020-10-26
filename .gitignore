@@ -24,4 +24,4 @@ jiraVolume/src/ruby-cucumber-example/features/*.feature
 !jenkins_home/config.xml
 
 #don't ignore the jira backup
-!jiraVolume/jira-xray-backup.zip
+!jiraVolume/20201026-jiraxray-backup.zip

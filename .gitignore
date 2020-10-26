@@ -25,3 +25,6 @@ jiraVolume/src/ruby-cucumber-example/features/*.feature
 
 #don't ignore the jira backup
 !jiraVolume/import/jira-xray-backup.zip
+
+#dont ignore any pictures that are part of the setup
+!jiraVolume/setup-pics/**

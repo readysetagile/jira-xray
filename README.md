@@ -18,15 +18,20 @@ In short, the solution works like this:
 6. Xray also provides out-of-box reporting for each test set, test, and execution to trace test results back to each requirement or business need. 
 
 ------------------------------
+## TL;DR
+
+[Get your containers up and running](#getting-started)
+
+------------------------------
 
 ##  Overall implementation
 
 >
-> * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE 
+> **IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE**
 >
 
 This repo is designed for you to try this solution in an isolated environment (i.e. docker containers).  That said, it is a _TESTING_ environment, meaning that
-_this environment is not ready for a production_.  So, please be aware that certain security measures need to be taken before this solution is promoted to a non-development
+_this environment is not ready for production_.  So, please be aware that certain security measures need to be taken before this solution is promoted to a non-development
 environment, especially when considering communication between each container. 
 
 ### Licensing
@@ -45,14 +50,14 @@ to execute your automated tests and import the results in separate issues in Jir
 ### Case Study: GasTrak
 
 The case study is a [simple web page](https://readysetagile.github.io/presentations/JiraXray.html#/6) used to enter gas pump filling data directly from the pump.
-A user can enter data, provide automatic formatting, and save the results in a comma separated file.  
+A user can enter data, which is automatically formatted, and the results are saved in a comma separated file.  
 
 ### Test plan
 
 Here is the test plan we will be using.  Basically, we will be testing the user number formatting and other miscellaneous functionality.
 ![test plan](https://readysetagile.github.io/presentations/lib/img/atlassian/gastrak-test-plan.svg)
 
-==============================
+------------------------------
 ### Getting started
 To get started with this solution and see it in action
 1. Clone this repo
@@ -62,11 +67,11 @@ To get started with this solution and see it in action
 4. [Configure Jira](https://github.com/readysetagile/jira-xray/tree/main/jiraVolume)
 5. [Configure Jenkins](https://github.com/readysetagile/jira-xray/tree/main/jenkins_home)
 6. Allow communication in your firewall (instructions in the Firewall section)
-==============================
+------------------------------
 
 ### Firewall
 >
-> * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE 
+> **IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE * IMPORTANT NOTE**
 >
 These instructions will get you started to help Jenkins communicate with your Docker host to spin up containers.  However **this is also a huge security risk**.  
 Treat these instructions only to test your environment.
@@ -76,5 +81,5 @@ security protocols like TLS.  Therefore, to get this going simply, you can forwa
 
 Here's what I did to get this working in a Windows Docker host:
 1. In a CLI, enter `netsh interface portproxy add v4tov4 listenport=4243 listenaddress=127.0.0.1 connectport=2375 connectaddress=127.0.0.1`
-2. Open the docker settings (from the system tray) and check `"Expose daemon on tcp://localhost:2375 without TLS"' 
+2. Open the docker settings (from the system tray) and check `"Expose daemon on tcp://localhost:2375 without TLS"`
 

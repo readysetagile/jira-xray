@@ -39,20 +39,20 @@ Once you have verified the container is running:
 
 5. Save the config.  Now scroll to the bottom of the page to configure a cloud using the `separate configuration page`
 
-6. Add a new cloud
+6. Add a new cloud  
 ![add-cloud](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/add-cloud.png)
 
-7. Name the cloud and click `Docker Cloud Details...`
+7. Name the cloud and click `Docker Cloud Details...`  
 ![name-cloud](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/name-cloud.png)
 
 8. In the Configure Clouds module, set the Docker Host URI as `tcp://host.docker.internal:4243` and check Enable.
-	- **NOTE:  make sure you don't skip the impratant step to configure the firewall **
+	- **NOTE:  make sure you don't skip the impratant step to configure the firewall (in the title README)**
 ![config-cloud](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/config-cloud.png)
 
 9. Click Docker Agent Templates.  Set the Label, Name and Docker Image to `ruby-docker-slave`.  This is the slave container that the addon will dynamically start to run the automated tests.
 ![docker-agent-templates](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/docker-agent-templates.png)
 
-10. Save this config, and head mack to the main screen.
+10. Save this config, and head back to the main screen.
 
 ------------------------------------
 
@@ -69,12 +69,12 @@ Your final work is to configure the build job to extract the tests, test them, a
 ![restrict-build](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/restrict-build.png)
 
 3. Configure your build steps
-	- The first to remove old feature files (optional)
+	- The first step: remove old feature files (optional)
 ![build-remove-features](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/build-remove-features.png)
-	- Add a task for `Xray: Cucumber Features Export Task`.  Set the issues to a list of tags from your Jira project (e.g. GTT-4).  
-	- Set the path to `/var/atlassian/application-data/jira/src/ruby-cucumber-example/features`.  This is where the plugin will export the feature files it extracts from your Jira "Test" issues.
+	- The second step: Add a task for `Xray: Cucumber Features Export Task`.  Set the issues to a list of tags from your Jira project (e.g. GTT-4, which is the whole test plan).  
+	- Set the File Path to `/var/atlassian/application-data/jira/src/ruby-cucumber-example/features`.  This is where the plugin will export the feature files it extracts from your Jira "Test" issues.
 ![xray-export](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/xray-export.png)
-	- Add another Execute Shell step.  These are the commands to run inside the slave container to execute the test suite.  
+	- the third step: Execute Shell step.  These are the commands to run inside the slave container to execute the test suite.  
 ![execute-tests](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/execute-tests.png)
 		```
 		echo "Execute the tests"
@@ -86,8 +86,8 @@ Your final work is to configure the build job to extract the tests, test them, a
 4. Now add a post-build step to `Xray: Results Import Task`.  Set the `Execution Report File (file path with file name)` to `/var/atlassian/application-data/jira/src/ruby-cucumber-example/output/report.json`.  This is the file that Jira will parse into a new Test Execution issue
 ![post-build](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/post-build.png)
 
-5. You are now ready to execute the build!  Head back to the main build screen.  Click the arrow next to the jira-xray job and click `Build`
+5. You are now ready to execute the build!  Head back to the main build screen.  Click the arrow next to the jira-xray job and click `Build Now`
 ![build-now](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/build-now.png)
 
 6.  You should see the progress of the build, and then the execution results.  You can check out the console output for success or failure.
-![console-out](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/build-now.png)
+![console-out](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/console-out.png)

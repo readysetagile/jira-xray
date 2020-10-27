@@ -1,50 +1,58 @@
-# Setting up the Jira instance
+# Setting up the Jenkins instance
 This directory holds the docker volume for Jenkins (i.e. /var/jenkins_home)
 
 Once you have verified the container is running:
 
 1. Navigate to `http://localhost:9090/`
 
-2. This instance does not have security enabled, so you will see the jobs screen with the `jira-xray` job.  You cannot run jobs yet because the correct plugins will not be installed.
+2. This instance does not have security enabled, so you will see the jobs screen with the `jira-xray` job.  You cannot run jobs yet because the correct plugins will not be installed or configured.
 ![jenkins-jobs](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/jenkins-jobs.png)
 
-3. Navigate to `Manage Jenkins` on then left, then the `Manage Plugins` button
+--------------------------
+## Install Plugins
+--------------------------
+
+1. Navigate to `Manage Jenkins` on then left, then the `Manage Plugins` button  
 ![manage-plugins](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/manage-plugins.png)
 
-4. Click on the `Available` tab and search for `docker`.  Check the Docker plugin, and then `Install without restart`
+2. Click on the `Available` tab and search for `docker`.  Check the Docker plugin, and then `Install without restart`
 ![docker-plugin](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/docker-plugin.png)
 
-5. You will see the progress of the installation.  When it's done, click the link that reads `Go back to the top page`
+3. You will see the progress of the installation.  When it's done, click the link that reads `Go back to the top page`
 
-6. Repeat the previous three steps for the `Xray - Test Management for Jira` plugin
+4. Repeat the previous three steps for the `Xray - Test Management for Jira` plugin
 ![xray-plugin](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/xray-plugin.png)
 
-7. Now you need to configure the plugins.  From the top menu, navigate to Manage Jenkins > Configure System > scroll down to Xray Configuration
+--------------------------
+## Configure Plugins
+--------------------------
+
+1. Now you need to configure the plugins.  From the top menu, navigate to Manage Jenkins > Configure System > scroll down to Xray Configuration
 ![xray-config](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/xray-config.png)
 
-8. Fill in the configuration alias and use `http://host.docker.internal:8080/` for the Jira URL.
+2. Fill in the configuration alias and use `http://host.docker.internal:8080/` for the Jira URL.
 
-9. Now add some credentials.  These are the credentials that Jenkins will use to log into your Jira instance and use its REST API to extract XRay tests into feature files.  You can use the default credentials of **jiraxray** as the username and password
+3. Now add some credentials.  These are the credentials that Jenkins will use to log into your Jira instance and use its REST API to extract XRay tests into feature files.  You can use the default credentials of **jiraxray** as the username and password
 ![add-creds](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/add-creds.png)
 
-10. Make sure you test the connection and get the `Connection: Success!` message
+4. Make sure you test the connection and get the `Connection: Success!` message
 
-11. Save the config.  Now scroll to the bottom of the page to configure a cloud using the `separate configuration page`
+5. Save the config.  Now scroll to the bottom of the page to configure a cloud using the `separate configuration page`
 
-12. Add a new cloud
+6. Add a new cloud
 ![add-cloud](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/add-cloud.png)
 
-13. Name the cloud and click `Docker Cloud Details...`
+7. Name the cloud and click `Docker Cloud Details...`
 ![name-cloud](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/name-cloud.png)
 
-14. In the Configure Clouds module, set the Docker Host URI as `tcp://host.docker.internal:4243` and check Enable.
+8. In the Configure Clouds module, set the Docker Host URI as `tcp://host.docker.internal:4243` and check Enable.
 	- **NOTE:  make sure you don't skip the impratant step to configure the firewall **
 ![config-cloud](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/config-cloud.png)
 
-15. Click Docker Agent Templates.  Set the Label, Name and Docker Image to `ruby-docker-slave`.  This is the slave container that the addon will dynamically start to run the automated tests.
+9. Click Docker Agent Templates.  Set the Label, Name and Docker Image to `ruby-docker-slave`.  This is the slave container that the addon will dynamically start to run the automated tests.
 ![docker-agent-templates](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/docker-agent-templates.png)
 
-16. Save this config, and head mack to the main screen.
+10. Save this config, and head mack to the main screen.
 
 ------------------------------------
 

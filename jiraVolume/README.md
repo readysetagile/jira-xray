@@ -24,11 +24,11 @@ Once you have verified the container is running:
 ![dashboard](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jiraVolume/setup-pics/dashboard.png)
 
 7. Install the XRay plugin
-	- nativate to the upper-left gear icon > Manage Apps > 
+	- nativate to the upper-right gear icon > Manage Apps > 
 	- enter `Xray Test Management for Jira` in the `Search the marketplace` textbox
 	- click the button that reads `Buy now`, `Install`, or `Evaluate` 
+![xray-plugin](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jiraVolume/setup-pics/xray-plugin.png)
 	- click Accept & Install
 	- After install, click Get License to obtain an XRay license specific to your installation.  You can also obtain a eval license from Xpand It
-![xray-plugin](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jiraVolume/setup-pics/xray-plugin.png)
 
 8. Your Jira Software instance should now be ready to go!

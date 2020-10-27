@@ -28,3 +28,4 @@ jiraVolume/src/ruby-cucumber-example/features/*.feature
 
 #dont ignore any pictures that are part of the setup
 !jiraVolume/setup-pics/**
+!jenkins_home/setup-pics/**

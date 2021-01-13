@@ -12,7 +12,8 @@ services:
     networks:
       - back
   jenkins:
-    image: jenkins/jenkins:lts
+    build: 
+      context: './jenkins_home/'
     restart: always
     privileged: true
     user: root

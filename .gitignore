@@ -23,6 +23,13 @@ jiraVolume/src/ruby-cucumber-example/features/*.feature
 #don't ignore the jenkins master config
 !jenkins_home/config.xml
 
+#don't ignore the Dockerfile in the jenkins folder
+!jenkins_home/Dockerfile
+
+#dont ignore the credential file or Xpandit config file
+!jenkins_home/com.xpandit.plugins.xrayjenkins.model.ServerConfiguration
+!jenkins_home/credentials.xml
+
 #don't ignore the jira backup
 !jiraVolume/import/jira-xray-backup.zip
 

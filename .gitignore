@@ -27,7 +27,7 @@ jiraVolume/src/ruby-cucumber-example/features/*.feature
 !jenkins_home/Dockerfile
 
 #dont ignore the credential file or Xpandit config file
-!jenkins_home/com.xpandit.plugins.xrayjenkins.model.ServerConfiguration
+!jenkins_home/com.xpandit.plugins.xrayjenkins.model.ServerConfiguration.xml
 !jenkins_home/credentials.xml
 
 #don't ignore the jira backup

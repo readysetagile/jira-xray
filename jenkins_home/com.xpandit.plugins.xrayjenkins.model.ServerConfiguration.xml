@@ -1,0 +1,12 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<com.xpandit.plugins.xrayjenkins.model.ServerConfiguration plugin="xray-connector@2.2.0">
+  <serverInstances>
+    <com.xpandit.plugins.xrayjenkins.model.XrayInstance>
+      <configID>a4092efb-becd-4560-9b23-4a1f6ed77b92</configID>
+      <alias>local Jira Server</alias>
+      <serverAddress>http://host.docker.internal:8080/</serverAddress>
+      <hosting>SERVER</hosting>
+      <credentialId>Jira</credentialId>
+    </com.xpandit.plugins.xrayjenkins.model.XrayInstance>
+  </serverInstances>
+</com.xpandit.plugins.xrayjenkins.model.ServerConfiguration>

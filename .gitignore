@@ -12,6 +12,13 @@
 #ignore the Jenkins plugins dir
 jenkins_home/plugins/**
 
+#don't ignore the files necessary to skip the Jira install
+!jiraVolume/data/**
+!jiraVolume/database/**
+!jiraVolume/caches/**
+!jiraVolume/Xray/**
+!jiraVolume/dbconfig.xml
+
 #don't ignore the source files for the automated testing solution, however, ignore the feature files.
 #the Jenkins job will extract the feature files from the Jira REST API 
 !jiraVolume/src/**

@@ -14,7 +14,7 @@ jenkins_home/plugins/**
 
 #don't ignore the files necessary to skip the Jira install
 !jiraVolume/data/**
-!jiraVolume/database/**
+!jiraVolume/database/h2db.mv.db
 !jiraVolume/caches/**
 !jiraVolume/Xray/**
 !jiraVolume/dbconfig.xml

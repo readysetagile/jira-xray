@@ -1,0 +1,46 @@
+<table id="header-history">
+    #if ($header.issueState.created)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.newissue', ['<span class="aui-lozenge aui-lozenge-new">', '</span>'])</td></tr>
+    #end
+
+    #if ($fieldCount>0 || $commentCount>0 || $worklogGroupsCount>0)
+        <tr>
+            #set($updatesHeader = $i18n.getText('issue.update.batch.mail.header.summary.updates_1_4_x', [$fieldCount]))
+            #set($commentsHeader = $i18n.getText('issue.update.batch.mail.header.summary.comments_1_4_x', [$commentCount]))
+            #set($worklogsHeader = $i18n.getText('issue.update.batch.mail.header.summary.worklogs_1_4_x', [$worklogGroupsCount]))
+            #set ($all = $joinWithCommas.apply($mapToStrong.apply([$updatesHeader, $commentsHeader, $worklogsHeader])))
+
+
+            <td colspan="2">$i18n.getText('issue.update.batch.mail.header.summary.prefix_1_4_x', [$firstFieldCount, $all])</td>
+        </tr>
+    #end
+
+    #if ($containsMentions)
+        <tr>
+            <td colspan="2">
+                <strong>
+                    #parse("templates/email-batch/shared/mention-text.vm")
+                </strong>
+            </td>
+        </tr>
+    #end
+
+    #if ($header.issueState.movedToProject)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.movedissue', ['<span class="aui-lozenge aui-lozenge-moved">', '</span>', $escape.apply($header.issueState.movedToProject)])</td></tr>
+    #end
+    #if ($header.issueState.assigned)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.assignedissue', ['<strong>', '</strong>'])</td></tr>
+    #end
+
+    #if ($header.issueState.archived && $header.issueState.restored)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.archivedandrestoredissue', ['<b>', '</b>'])</td></tr>
+    #elseif ($header.issueState.archived)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.archivedissue', ['<b>', '</b>'])</td></tr>
+    #elseif ($header.issueState.restored)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.restoredissue', ['<b>', '</b>'])</td></tr>
+    #end
+
+    #if ($header.issueState.deleted)
+        <tr><td colspan="2">$i18n.getText('issue.update.batch.mail.header.deletedissue', ['<span class="aui-lozenge aui-lozenge-error">', '</span>'])</td></tr>
+    #end
+</table>

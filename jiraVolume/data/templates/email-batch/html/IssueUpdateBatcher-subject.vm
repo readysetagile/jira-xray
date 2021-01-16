@@ -1,0 +1,1 @@
+$i18n.getText('issue.update.batch.mail.subject', [$header.issueKey, $header.issueSummary])

@@ -1,0 +1,679 @@
+/* CSS RESET Based on HTML Email Boilerplate */
+/*MIT License http://htmlemailboilerplate.com/license.html*/
+/*Copyright (c) 2010-2011 Sean Powell, The Engage Group*/
+/*Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:*/
+/*The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.*/
+/*THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
+
+/* Based on The MailChimp Reset INLINE: Yes. */
+/* Client-specific Styles */
+#outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+.ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+/* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+#backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+/* End reset */
+
+/* Some sensible defaults for images
+Bring inline: Yes. */
+img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+a img {border:none;}
+.image_fix {display:block; padding-top: 20px}
+
+/* Yahoo paragraph fix
+Bring inline: Yes. */
+p {margin: 1em 0;}
+
+/* Hotmail header color reset
+Bring inline: Yes. */
+h1, h2, h3, h4, h5, h6 {color: #172B4D !important;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, td a {color: #0052CC !important;}
+
+h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active, td a:ctive {
+  color: #0065FF !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+}
+
+h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, td a:visited {
+  color: #0052CC !important; /* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+}
+
+/* Outlook 07, 10 Padding issue fix
+Bring inline: No.*/
+table td {border-collapse: collapse; border-spacing: 0px; color: #172B4D; padding: 0px}
+
+/* Remove spacing around Outlook 07, 10 tables
+Bring inline: Yes */
+table { border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+
+/* the end of the CSS RESET reset */
+/* ************************************* */
+
+
+.spacer-40 {
+  height: 40px !important;
+  font-size: 40px !important;
+  line-height: 40px !important;
+}
+.spacer-20 {
+  height: 20px !important;
+  font-size: 20px !important;
+  line-height: 20px !important;
+}
+.spacer-10 {
+  height: 10px !important;
+  font-size: 10px !important;
+  line-height: 10px !important;
+}
+
+table.group td.author {
+  width: 32px;
+  vertical-align: top;
+}
+
+table.group td.author img {
+  display: block;
+  border-radius: 100%;
+}
+
+table.group td.heading {
+  padding-top: 3px;
+  vertical-align: top;
+}
+
+.updates-diff-label {
+  max-width: 150px;
+  vertical-align: top;
+  color: #5E6C84;
+  text-align: left;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+.updates-diff-content {
+  vertical-align: top;
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+.updates-diff img {
+  vertical-align: text-bottom;
+}
+
+.red {
+    color: red;
+}
+
+.project-avatar {
+    width: 60px;
+    text-align: left;
+}
+
+.project-avatar img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* HR */
+
+td.line-bottom {
+  border-bottom: 2px solid #DFE1E6;
+}
+
+td.line-top {
+  border-top: 2px solid #DFE1E6;
+}
+
+div.line-top {
+    border-top: solid 2px #ebecf0;
+    padding: 0 10px;
+    font-size: 5px;
+    height: 5px;
+}
+
+/* AUI typography */
+body {
+  color: #172b4d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  letter-spacing: 0;
+}
+/* International Font Stacks*/
+[lang|=en] {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+[lang|=ja] {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Verdana, Arial, sans-serif;
+}
+/* Default margins */
+p,
+ul,
+ol,
+dl,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+form.aui,
+table.aui,
+.aui-tabs,
+.aui-panel,
+.aui-group {
+  margin: 0;
+}
+/* No top margin to interfere with box padding */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+blockquote:first-child,
+pre:first-child,
+form.aui:first-child,
+table.aui:first-child,
+.aui-tabs:first-child,
+.aui-panel:first-child,
+.aui-group:first-child {
+  margin-top: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #172b4d;
+}
+/* Headings: desired line height in px / font size = unitless line height */
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+  text-transform: none;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.006em;
+  text-transform: none;
+}
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.42857143;
+  letter-spacing: -0.003em;
+  text-transform: none;
+}
+h5 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.66666667;
+  letter-spacing: 0;
+  text-transform: none;
+}
+h6 {
+  color: #6b778c;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.66666667;
+  letter-spacing: 0;
+  text-transform: none;
+}
+/* Other typographical elements */
+small {
+  color: #7a869a;
+  font-size: 12px;
+  line-height: 1.33333333;
+}
+code,
+kbd {
+  font-family: "SFMono-Medium", "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Courier, monospace;
+}
+var,
+address,
+dfn,
+cite {
+  font-style: italic;
+}
+cite:before {
+  content: "\2014 \2009";
+}
+blockquote {
+  border-left: 1px solid #dfe1e6;
+  color: #7a869a;
+  margin-left: 19px;
+  padding: 10px 20px;
+}
+blockquote > cite {
+  display: block;
+  margin-top: 10px;
+}
+q {
+  color: #7a869a;
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+abbr {
+  border-bottom: 1px #7a869a dotted;
+  cursor: help;
+}
+
+/*! AUI Lozenge */
+.aui-lozenge {
+  background: #dfe1e6;
+  border-top: 3px solid #dfe1e6;
+  border-bottom: 3px solid #dfe1e6;
+  border-left: 6px solid #dfe1e6;
+  border-right: 6px solid #dfe1e6;
+  border-radius: 3px;
+  color: #253858;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 99%;
+  /* cross-browser compromise to make the line-height match the font-size */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: text-bottom;
+}
+.aui-lozenge.aui-lozenge-subtle {
+  background-color: #ffffff;
+  border-color: #c1c7d0;
+  color: #42526e;
+}
+.aui-lozenge-success {
+  background-color: #00875a;
+  border-color: #00875a;
+  color: #ffffff;
+}
+.aui-lozenge-success.aui-lozenge-subtle {
+  background-color: #ffffff;
+  border-color: #abf5d1;
+  color: #00875a;
+}
+.aui-lozenge-error {
+  background-color: #de350b;
+  border-color: #de350b;
+  color: #ffffff;
+}
+.aui-lozenge-error.aui-lozenge-subtle {
+  background-color: #ffffff;
+  border-color: #ffbdad;
+  color: #de350b;
+}
+.aui-lozenge-current {
+  background-color: #b3d4ff;
+  border-color: #b3d4ff;
+  color: #0052cc;
+}
+.aui-lozenge-current.aui-lozenge-subtle {
+  background-color: #ffffff;
+  border-color: #b3d4ff;
+  color: #0052cc;
+}
+.aui-lozenge-complete,
+.aui-lozenge-new {
+  background-color: #5243aa;
+  border-color: #5243aa;
+  color: #ffffff;
+}
+.aui-lozenge-complete.aui-lozenge-subtle,
+.aui-lozenge-new.aui-lozenge-subtle {
+  background-color: #ffffff;
+  border-color: #c0b6f2;
+  color: #5243aa;
+}
+.aui-lozenge-moved {
+  background-color: #ffab00;
+  border-color: #ffab00;
+  color: #253858;
+}
+.aui-lozenge-moved.aui-lozenge-subtle {
+  background-color: #ffffff;
+  border-color: #fff0b3;
+  color: #42526e;
+}
+
+/*Footer styles*/
+.footer-text {
+/*@aui-color-N300*/
+  color: #5E6C84;
+  font-size: 12px;
+}
+
+/*
+ * Stylesheet copied from wiki-renderer.less
+ * Name: wiki-renderer.css
+ * File: /includes/jira/wikipreview/wiki-renderer.less
+ */
+
+table.confluenceTable {
+  border-collapse: collapse;
+  margin: 5px 0 5px 2px;
+  width: auto;
+}
+
+td.confluenceTd {
+  border: 1px solid #cccccc;
+  padding: 3px 4px 3px 4px;
+}
+
+th.confluenceTh {
+  border: 1px solid #cccccc;
+  background: #f5f5f5;
+  padding: 3px 4px 3px 4px;
+  text-align: center;
+}
+
+/* override for aui form styles (stalker comment) */
+div.wiki-edit {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+div.wiki-edit p {
+  padding: 0;
+}
+
+div.wiki-edit h1 {
+  font-size: 2.4em;
+}
+
+div.wiki-edit h2 {
+  font-size: 1.8em;
+  border: none;
+}
+
+div.wiki-edit h3 {
+  font-size: 1.3em;
+}
+
+div.wiki-edit h4 {
+  font-size: 1.2em;
+}
+
+div.wiki-edit h5 {
+  font-size: 1em;
+}
+
+div.wiki-edit h6 {
+  font-size: .9em;
+}
+
+div.wiki-edit img,
+div.wiki-edit a img,
+div.wiki-edit fieldset {
+  border: 0;
+}
+
+div.wiki-edit ul {
+  margin: 0 0 1em 2em;
+}
+
+div.wiki-edit ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+  padding-left: 2.5em;
+}
+
+div.wiki-edit blockquote {
+  border-left: 2px solid #3c78b5;
+  font-size: 1em;
+  font-family: inherit;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+div.wiki-edit small,
+div.wiki-edit .small {
+  font-size: .9em;
+}
+
+div.wiki-edit strong,
+div.wiki-edit b,
+div.wiki-edit .bolded {
+  font-weight: bold;
+}
+
+/* All wiki formatted content needs a specific selector prefixed with .wiki-edit also so that it overrides aui form styles */
+.preformatted,
+div.wiki-edit  .preformatted,
+.code,
+div.wiki-edit  .code {
+  border: 1px solid #cccccc;
+  background: #f5f5f5;
+  font-size: 12px;
+  line-height: 1.33333333333333;
+  font-family: monospace;
+}
+
+/* Syntax highlighting styles are copied and adapted from wiki-renderer.less */
+
+.code-keyword,
+div.wiki-edit  .code-keyword {
+  color: #000091;
+}
+
+.code-object,
+div.wiki-edit  .code-object {
+  color: #910091;
+}
+
+.code-quote,
+div.wiki-edit  .code-quote,
+.code-quote .code-keyword,
+div.wiki-edit  .code-quote .code-keyword,
+.code-quote .code-object,
+div.wiki-edit  .code-quote .code-object {
+  color: #009100;
+}
+
+.code-quote-red,
+div.wiki-edit .code-quote-red,
+.code-quote-red .code-keyword,
+div.wiki-edit .code-quote-red .code-keyword,
+.code-quote-red .code-object,
+div.wiki-edit .code-quote-red .code-object {
+  color: #910000;
+}
+
+.code-comment,
+div.wiki-edit  .code-comment,
+.code-comment .code-keyword,
+div.wiki-edit  .code-comment .code-keyword,
+.code-comment .code-object,
+div.wiki-edit  .code-comment .code-object,
+.code-comment .code-quote,
+div.wiki-edit  .code-comment .code-quote {
+  color: #808080;
+}
+
+.code-xml .code-keyword,
+div.wiki-edit  .code-xml .code-keyword {
+  font-weight: bold;
+}
+
+.code-tag,
+div.wiki-edit  .code-tag {
+  color: #000091;
+}
+
+.panel,
+div.wiki-edit  .panel {
+  border: 1px solid #cccccc;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  margin: 9px 0;
+}
+
+.panelHeader,
+div.wiki-edit  .panelHeader {
+  border-bottom: 1px solid #cccccc;
+  padding: 9px 12px;
+}
+
+.panelContent,
+div.wiki-edit  .panelContent {
+  padding: 9px 12px;
+}
+div.wiki-edit pre {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+
+div.preformattedContent pre,
+div.codeContent pre {
+  max-height: 30em;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: normal;
+}
+
+div.preformattedContent pre {
+  /* We value the user's formatting in {noformat} blocks. We should never introduce our own newlines in to unformatted blocks of text. */
+
+  white-space: pre;
+  word-break: normal;
+}
+
+table div.preformattedContent pre {
+  /* ...unless they're in a table, in which case we'd prefer the content wrap than the user having to scroll to the bottom of the table to scroll it. */
+
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* miscellaneous styles */
+.linkerror {
+  background-color: #fcc;
+}
+
+.editPageInsertLinks,
+.editPageInsertLinks a {
+  font-weight: normal;
+  font-size: 9px;
+}
+
+.helpheading {
+  border-bottom: 1px solid #3b73af;
+  font-weight: bold;
+  background-color: #ddd;
+  padding: 4px 4px 2px;
+  margin: 0px;
+}
+
+.helpcontent {
+  padding: 4px 4px 20px 4px;
+  background-color: #fff;
+}
+
+.gridHover {
+  background-color: #f9f9f9;
+}
+
+.navmenu {
+  border: 1px solid #cccccc;
+}
+
+/* side menu highlighting (e.g. space content screen) */
+.optionPadded {
+  padding: 2px;
+}
+
+.optionSelected {
+  border: #dddddd solid #cccccc;
+  border: 1px solid #dddddd;
+  background-color: #ffffcc;
+  padding: 2px;
+  margin: -1px;
+}
+
+.optionSelected a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.menuheading {
+  border-bottom: 1px solid #3b73af;
+  font-weight: bold;
+  background-color: #ddd;
+  padding: 4px 4px 2px 4px;
+}
+
+.menuitems {
+  padding: 4px 4px 20px 4px;
+  background-color: #f5f5f5;
+}
+
+.pagetitle {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: inherit;
+  color: #003366;
+}
+
+.wiki-edit-content.previewClass {
+  background-color: #E8F1FF;
+  padding: 0.3em 0.7em;
+}
+
+.restrictions-active {
+  color: #505F79;
+}
+
+.restrictions-active span {
+  color: #FF5630;
+}
+
+table td.issue-summary {padding-top: 3px;}
+table td.project-spacer {padding-left: 8px; padding-right: 8px; vertical-align: middle;}
+table td.issue-key {padding-left: 5px;  vertical-align: middle;}
+table td.issue-status {padding-left: 8px; vertical-align: middle;}
+table td.issue-type {vertical-align: middle; font-size: 0;}
+
+table.structure {
+      border-radius: 6px;
+      border: solid 2px #ebecf0;
+      border-collapse: separate;
+}
+
+td.section-header, td.updates, td.comments, td.horizontal-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}

@@ -1,0 +1,7 @@
+#if ($isMentionedInDescription && $timesMentionedInComments)
+$i18n.getText('issue.update.batch.mail.header.comment.description.mention', [$timesMentionedInComments])
+#elseif ($isMentionedInDescription)
+$i18n.getText('issue.update.batch.mail.header.description.mention')
+#elseif ($timesMentionedInComments)
+$i18n.getText('issue.update.batch.mail.header.comment.mention', [$timesMentionedInComments])
+#end

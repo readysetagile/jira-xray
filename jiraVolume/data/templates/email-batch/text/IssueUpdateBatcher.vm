@@ -1,0 +1,142 @@
+#disable_html_escaping()
+$header.projectName / $header.issueKey #if(!$header.issueState.deleted && $header.issueStatus && $header.issueStatus.name)[$header.issueStatus.name]#end
+
+$header.issueSummary
+
+$textUtils.spacer("=", null, null)
+$i18n.getText('issue.update.batch.mail.header.summary')
+
+#parse("templates/email-batch/shared/mention-text.vm")
+#if ($header.issueState.created)
+$i18n.getText('issue.update.batch.mail.header.newissue', ['', ''])
+#end
+#if ($fieldCount>0 || $commentCount>0 || $worklogGroupsCount>0)
+    #set($updatesHeader = $i18n.getText('issue.update.batch.mail.header.summary.updates_1_4_x', [$fieldCount]))
+    #set($commentsHeader = $i18n.getText('issue.update.batch.mail.header.summary.comments_1_4_x', [$commentCount]))
+    #set($worklogsHeader = $i18n.getText('issue.update.batch.mail.header.summary.worklogs_1_4_x', [$worklogGroupsCount]))
+    #set ($all = $joinWithCommas.apply([$updatesHeader, $commentsHeader, $worklogsHeader]))
+
+$i18n.getText('issue.update.batch.mail.header.summary.prefix_1_4_x', [$firstFieldCount, $all])
+#end
+#if ($header.issueState.movedToProject)
+$i18n.getText('issue.update.batch.mail.header.movedissue', ['', '', $header.issueState.movedToProject])
+#end
+#if ($header.issueState.assigned)
+$i18n.getText('issue.update.batch.mail.header.assignedissue', ['', ''])
+#end
+#if ($header.issueState.archived && $header.issueState.restored)
+$i18n.getText('issue.update.batch.mail.header.archivedandrestoredissue', ['', ''])
+#elseif ($header.issueState.archived)
+$i18n.getText('issue.update.batch.mail.header.archivedissue', ['', ''])
+#elseif ($header.issueState.restored)
+$i18n.getText('issue.update.batch.mail.header.restoredissue', ['', ''])
+#end
+#if ($header.issueState.deleted)
+$i18n.getText('issue.update.batch.mail.header.deletedissue', ['', ''])
+#end
+
+#if($header.showActions)
+
+#if ($header.issueUrl)
+$i18n.getText('issue.update.batch.mail.header.vieworcommentissue')
+$header.issueUrl
+
+#end
+#end
+##start of create section
+#if($newIssueGroups && !$newIssueGroups.isEmpty())
+#set($createSectionHeader = $i18n.getText('issue.update.batch.mail.create.section.header'))
+$textUtils.spacer("=", "-", $createSectionHeader)
+#foreach($fieldGroup in $newIssueGroups)
+$i18n.getText('issue.update.batch.mail.create.section.changegroup', ['', $fieldGroup.author, '', $fieldGroup.date])
+
+#foreach($update in $fieldGroup.updates)
+$update.text
+#end
+
+#end
+#end
+##end of create section
+##start of update section
+#if ($fieldCount > 0)
+
+#set($updateSectionHeader = $i18n.getText('issue.update.batch.mail.update.section.header', [$fieldCount]))
+$textUtils.spacer("=", null, $updateSectionHeader)#foreach($fieldGroup in $fields)$textUtils.spacer(null, "-", null)
+$i18n.getText('issue.update.batch.mail.update.section.changegroup', ['', $fieldGroup.author, '', $fieldGroup.date])
+
+#foreach($update in $fieldGroup.updates)
+$update.text
+#end
+
+#end
+#end
+##end of update section
+##start of issue archiving
+#if($archivingIssueGroups && !$archivingIssueGroups.isEmpty())
+$textUtils.spacer("=", "-", $i18n.getText('issue.update.batch.mail.archiving.section.header'))
+
+#foreach($fieldGroup in $archivingIssueGroups)
+#if($fieldGroup.archived)
+$i18n.getText('issue.update.batch.mail.archiving.archive.section.changegroup', ['', $fieldGroup.author, '', $fieldGroup.date])
+#end
+#if($fieldGroup.restored)
+$i18n.getText('issue.update.batch.mail.archiving.restore.section.changegroup', ['', $fieldGroup.author, '', $fieldGroup.date])
+#end
+#end
+
+#end
+##end of issue archiving
+## start of issue deleted
+#if($deletedIssueGroups && !$deletedIssueGroups.isEmpty())
+$textUtils.spacer("=", "-", $i18n.getText('issue.update.batch.mail.delete.section.header'))
+
+#foreach($fieldGroup in $deletedIssueGroups)
+$i18n.getText('issue.update.batch.mail.delete.section.changegroup', ['', $fieldGroup.author, '', $fieldGroup.date])
+
+#end
+#end
+##end of issue deleted
+##start of comments
+#if ($commentCount > 0)
+#set ($sectionHeader = $i18n.getText("issue.update.batch.mail.comment.section.header", [$commentCount, $commentMentionCount]))
+$textUtils.spacer("=", null, $sectionHeader)#foreach($comment in $comments)$textUtils.spacer(null, "-", null)
+$i18n.getText('issue.update.batch.mail.update.comment.section.changegroup', ['', $comment.changedByName, '', $comment.changeDate])
+
+$comment.text
+
+#end
+#end
+##end of comments
+##start of worklogs
+#if ($worklogGroupsCount > 0)
+$textUtils.spacer("=", null, $i18n.getText('issue.update.batch.mail.update.worklog.section.header', [$worklogGroupsCount]))#foreach($fieldGroup in $worklogFields)
+$textUtils.spacer(null, "-", null)
+$i18n.getText($getEventSpecificSubject.apply($fieldGroup), ['', $fieldGroup.author, '', $fieldGroup.date])
+
+#set ($worklogEntry = $getWorklogEntry.apply($fieldGroup))
+$i18n.getText('issue.update.batch.mail.update.worklogentry', [$worklogEntry.text, $getWorklogAuthorFullName.apply($fieldGroup)])
+#set ($worklogComment = $getWorklogComment.apply($fieldGroup))
+$worklogComment.text
+#foreach($update in $fieldGroup.updates)
+#if($update.fieldKey != 'informplugin_worklogcomment' && $update.fieldKey != 'informplugin_worklogtimespent'&& $update.fieldKey !='informplugin_worklogauthor')
+$update.text
+#end
+#end
+
+#end
+#end
+##end of worklogs
+##start of footer
+#set ($commitIdSha1Formatted = "")
+#if ($commitIdSha1)
+    #set ($commitIdSha1Formatted = $i18n.getText('issue.update.batch.mail.footer.commitid.sha', $commitIdSha1))
+#end
+
+#set ($partnerNameFormatted = "")
+#if($partnerName)
+    #set ($partnerNameFormatted = $i18n.getText('issue.update.batch.mail.footer.partnername', $partnerName))
+#end
+#set ($jiraInfo = $i18n.getText(
+    'issue.update.batch.mail.footer.version.info',[$i18n.getText("template.jira.footer.generated.by"), $buildVersion, $currentBuildNumber, $commitIdSha1Formatted, $partnerNameFormatted]))
+$textUtils.spacer("=", null, $jiraInfo)
+##end of footer

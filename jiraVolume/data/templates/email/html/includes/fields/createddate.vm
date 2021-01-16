@@ -1,0 +1,7 @@
+#disable_html_escaping()
+<tr>
+    <th>#text("issue.field.created"):</th>
+    <td>
+        $datetimeformatter.withStyle("COMPLETE").format($issue.getCreated())
+    </td>
+</tr>

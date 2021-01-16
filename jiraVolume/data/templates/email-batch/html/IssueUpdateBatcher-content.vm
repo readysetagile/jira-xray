@@ -1,0 +1,342 @@
+#* @vtlvariable name="batch" type="com.atlassian.jira.plugins.inform.api.batching.Batch" *#
+#* @vtlvariable name="i18n" type="com.atlassian.jira.util.I18nHelper" *#
+#* @vtlvariable name="baseurl" type="java.lang.String" *#
+#* @vtlvariable name="escape" type="java.util.function.Function" *#
+#* @vtlvariable name="header" type="java.lang.Object" *#
+#* @vtlvariable name="fields" type="java.util.List" *#
+#* @vtlvariable name="newIssueGroups" type="java.util.List" *#
+#* @vtlvariable name="comments" type="java.util.List" *#
+#* @vtlvariable name="commentCount" type="java.lang.Integer" *#
+#* @vtlvariable name="commentMentionCount" type="java.lang.Long" *#
+#* @vtlvariable name="issueKey" type="java.lang.String" *#
+#* @vtlvariable name="issueUrl" type="java.lang.String" *#
+
+#* @vtlvariable name="buildVersion" type="java.lang.String" *#
+#* @vtlvariable name="currentBuildNumber" type="java.lang.String" *#
+#* @vtlvariable name="commitId" type="java.lang.String" *#
+#* @vtlvariable name="commitIdSha1" type="java.lang.String" *#
+#* @vtlvariable name="partnerName" type="java.lang.String" *#
+
+#disable_html_escaping()
+
+<table width="100%" align="left">
+    <tbody><tr><td style="padding: 20px !important" align="left" >
+
+        <table width="100%" style="max-width: 960px"><tbody><tr><td width="100%" style="width: 100%" align="left">
+
+            #parse("/templates/email-batch/html/IssueUpdateBatcher-history.vm")
+            <table>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table class="structure" width="100%">
+                <td><td class="spacer-20">&nbsp;</td></tr>
+                <tr><td class="header updates">
+                    #parse('/templates/email-batch/html/IssueUpdateBatcher-header.vm')
+                </td></tr>
+                <tr><td class="spacer-40">&nbsp;</td></tr>
+
+            #set($firstHorizontalLine = true)
+
+            ## issue created
+            #if($newIssueGroups && !$newIssueGroups.isEmpty())
+                #parse('/templates/email-batch/html/hr-bottom.vm')
+                <tr>
+                    <td id="new-issue-header" class="section-header">
+                        <table width="100%" style="width: 100%">
+                            <tr>
+                                <td width="100%" style="width: 100%"><h2>
+                                    $i18n.getText('issue.update.batch.mail.create.section.header')
+                                </h2></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="updates">
+                        #foreach($fieldGroup in $newIssueGroups)
+                            <table width="100%" class="group new-issue-group">
+                                <tr class="group-header">
+                                    <td class="author"><img src="$fieldGroup.authorIconUrl" width="24" height="24" /></td>
+                                    <td class="heading">
+                                        $i18n.getText('issue.update.batch.mail.create.section.changegroup', ['<strong>', $escape.apply($fieldGroup.author), '</strong>', $fieldGroup.date])
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer-10">&nbsp;</td>
+                                </tr>
+                                <tr class="group-content">
+                                    <td class="author spacer"></td>
+                                    <td class="updates-diff">
+                                        <table>
+                                            #foreach($update in $fieldGroup.updates)
+                                                <tr class="field-update">
+                                                    <td valign="top" align="left" class="updates-diff-label">
+                                                        $escape.apply($update.fieldName):
+                                                    </td>
+                                                    <td valign="top" align="left" class="updates-diff-content">
+                                                        #if($update.iconUrl)<img src="$update.iconUrl" height="16" width="16" border="0" />&nbsp;#end$update.diff
+                                                    </td>
+                                                </tr>
+                                            #end
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="spacer-20">&nbsp;</td>
+                                </tr>
+                            </table>
+                        #end
+                    </td>
+                </tr>
+            #end
+
+            ## updates
+            #if ($fieldCount > 0)
+                #parse('/templates/email-batch/html/hr-bottom.vm')
+                <tr>
+                    <td id="updates-header" class="section-header">
+                        <table width="100%" style="width: 100%">
+                            <tr>
+                                <td width="100%" style="width: 100%"><h2>
+                                    $i18n.getText('issue.update.batch.mail.update.section.header', [$fieldCount])
+                                </h2></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="updates">
+                        #foreach($fieldGroup in $fields)
+                        <table width="100%" class="group updates-group">
+                            <tr class="group-header">
+                                <td class="author"><img src="$fieldGroup.authorIconUrl" width="24" height="24" /></td>
+                                <td class="heading">
+                                    $i18n.getText('issue.update.batch.mail.update.section.changegroup', ['<strong>', $escape.apply($fieldGroup.author), '</strong>', $fieldGroup.date])
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="spacer-10">&nbsp;</td>
+                            </tr>
+                            <tr class="group-content">
+                                <td class="author spacer"></td>
+                                <td class="updates-diff">
+                                    <table>
+                                        #foreach($update in $fieldGroup.updates)
+                                            <tr class="field-update">
+                                                <td valign="top" align="left" class="updates-diff-label">$escape.apply($update.fieldName):</td>
+                                                <td valign="top" align="left" class="updates-diff-content">$update.diff</td>
+                                            </tr>
+                                        #end
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td class="spacer-20">&nbsp;</td>
+                            </tr>
+                        </table>
+                        #end
+                    </td>
+                </tr>
+            #end
+
+
+            ## issue archiving
+            #if($archivingIssueGroups && !$archivingIssueGroups.isEmpty())
+                #parse('/templates/email-batch/html/hr-bottom.vm')
+                <tr>
+                    <td id="issue-archiving-header" class="section-header">
+                        <table width="100%" style="width: 100%">
+                            <tr>
+                                <td width="100%" style="width: 100%"><h2>$i18n.getText('issue.update.batch.mail.archiving.section.header')</h2></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="updates">
+                        #foreach($fieldGroup in $archivingIssueGroups)
+                            <table width="100%" class="group archiving-issue-group">
+                                <tr class="group-header">
+                                    <td class="author"><img src="$fieldGroup.authorIconUrl" width="24" height="24" /></td>
+                                    #if($fieldGroup.archived)
+                                        <td class="heading">$i18n.getText('issue.update.batch.mail.archiving.archive.section.changegroup', ['<strong>', $escape.apply($fieldGroup.author), '</strong>', $fieldGroup.date])</td>
+                                    #end
+                                    #if($fieldGroup.restored)
+                                        <td class="heading">$i18n.getText('issue.update.batch.mail.archiving.restore.section.changegroup', ['<strong>', $escape.apply($fieldGroup.author), '</strong>', $fieldGroup.date])</td>
+                                    #end
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="spacer-20">&nbsp;</td>
+                                </tr>
+                            </table>
+                        #end
+                    </td>
+                </tr>
+            #end
+
+            ## issue delete
+            #if($deletedIssueGroups && !$deletedIssueGroups.isEmpty())
+                #parse('/templates/email-batch/html/hr-bottom.vm')
+                <tr>
+                    <td id="issue-deleted-header" class="section-header">
+                        <table width="100%" style="width: 100%">
+                            <tr>
+                                <td width="100%" style="width: 100%"><h2>$i18n.getText('issue.update.batch.mail.delete.section.header')</h2></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="updates">
+                        #foreach($fieldGroup in $deletedIssueGroups)
+                            <table width="100%" class="group deleted-issue-group">
+                                <tr class="group-header">
+                                    <td class="author"><img src="$fieldGroup.authorIconUrl" width="24" height="24" /></td>
+                                    <td class="heading">$i18n.getText('issue.update.batch.mail.delete.section.changegroup', ['<strong>', $escape.apply($fieldGroup.author), '</strong>', $fieldGroup.date])</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="spacer-20">&nbsp;</td>
+                                </tr>
+                            </table>
+                        #end
+                    </td>
+                </tr>
+            #end
+
+            ## comments
+            #if ($commentCount > 0)
+                #parse('/templates/email-batch/html/hr-bottom.vm')
+                <tr>
+                    <td id="comments-header" class="section-header">
+                        <table width="100%" style="width: 100%">
+                            <tr>
+                                <td width="100%" style="width: 100%"><h2>
+                                    $i18n.getText("issue.update.batch.mail.comment.section.header", [$commentCount, $commentMentionCount])
+                                </h2></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="comments">
+                        #foreach($comment in $comments)
+                        <table width="100%" class="group comments-group">
+                            <tr class="group-header">
+                                <td class="author"><img src="$comment.changedByIcon" width="24" height="24" /></td>
+                                <td class="heading">
+                                    $i18n.getText('issue.update.batch.mail.update.comment.section.changegroup', ['<strong>', $escape.apply($comment.changedByName), '</strong>', $comment.changeDate])
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="spacer-10">&nbsp;</td>
+                            </tr>
+                            <tr class="group-content field-update">
+                                <td class="author spacer"></td>
+                                <td class="updates-diff updates-diff-content">
+                                    $comment.diff
+                                </td>
+                            </tr>
+                        </table>
+                                <table>
+                                    <tr>
+                                        <td class="spacer-20">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            #end
+
+                    </td>
+                </tr>
+            #end
+
+        ## worklogs
+            #if ($worklogGroupsCount > 0)
+                #parse('/templates/email-batch/html/hr-bottom.vm')
+                <tr>
+                    <td id="worklog-header" class="section-header">
+                        <table width="100%" style="width: 100%">
+                            <tr>
+                                <td width="100%" style="width: 100%"><h2>$i18n.getText('issue.update.batch.mail.update.worklog.section.header', [$worklogGroupsCount])</h2></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="spacer-20">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="updates">
+                        #foreach($fieldGroup in $worklogFields)
+                            <table width="100%" class="group worklogs-group">
+                                <tr class="group-header">
+                                    <td class="author"><img src="$fieldGroup.authorIconUrl" width="24" height="24" /></td>
+                                    <td class="heading">$i18n.getText($getEventSpecificSubject.apply($fieldGroup), ['<strong>', $escape.apply($fieldGroup.author), '</strong>', $fieldGroup.date])</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer-10">&nbsp;</td>
+                                </tr>
+                                <tr class="group-content">
+                                    <td class="author spacer"></td>
+                                    <td class="updates-diff">
+                                        <table>
+                                            #set ($worklogEntry = $getWorklogEntry.apply($fieldGroup))
+                                            <tr class="field-update">
+                                                <td valign="top" align="left" class="updates-diff-label">$escape.apply($worklogEntry.fieldName):</td>
+                                                <td valign="top" align="left" class="updates-diff-content">$i18n.getText('issue.update.batch.mail.update.worklogentry', [$worklogEntry.diff, $escape.apply($getWorklogAuthorFullName.apply($fieldGroup))]) </td>
+                                            </tr>
+                                            #set ($worklogComment = $getWorklogComment.apply($fieldGroup))
+                                            <tr class="field-update">
+                                                <td valign="top" align="left" class="updates-diff-label">$escape.apply($worklogComment.fieldName):</td>
+                                                <td valign="top" align="left" class="updates-diff-content">$worklogComment.diff</td>
+                                            </tr>
+                                            #foreach($update in $fieldGroup.updates)
+                                                #if($update.fieldKey != 'informplugin_worklogcomment' && $update.fieldKey != 'informplugin_worklogtimespent'&& $update.fieldKey !='informplugin_worklogauthor')
+                                                    <tr class="field-update">
+                                                        <td valign="top" align="left" class="updates-diff-label">$escape.apply($update.fieldName):</td>
+                                                        <td valign="top" align="left" class="updates-diff-content">$update.diff</td>
+                                                    </tr>
+                                                #end
+                                            #end
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="spacer-20">&nbsp;</td>
+                                </tr>
+                            </table>
+                        #end
+                    </td>
+                </tr>
+            #end
+            </table>
+            #parse('/templates/email-batch/html/footer.vm')
+    </td></tr></tbody></table>
+
+</td></tr></tbody></table>

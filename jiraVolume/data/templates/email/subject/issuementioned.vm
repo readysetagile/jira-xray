@@ -1,0 +1,11 @@
+#disable_html_escaping()
+#if($remoteUser)
+    #set($userDisplayName = ${remoteUser.displayName})
+#else
+    #set($userDisplayName = $i18n.getText("common.words.anonymous"))
+#end
+#if($issue)
+$i18n.getText("jira.mentions.mentioned.you.on.issue",$userDisplayName, ${issue.getKey()})
+#else
+$i18n.getText("jira.mentions.mentioned.you", $userDisplayName)
+#end

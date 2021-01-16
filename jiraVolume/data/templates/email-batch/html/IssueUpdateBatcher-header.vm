@@ -1,0 +1,80 @@
+#* @vtlvariable name="batch" type="com.atlassian.jira.plugins.inform.api.batching.Batch" *#
+#* @vtlvariable name="i18n" type="com.atlassian.jira.util.I18nHelper" *#
+#* @vtlvariable name="baseurl" type="java.lang.String" *#
+#* @vtlvariable name="escape" type="java.util.function.Function" *#
+#* @vtlvariable name="header" type="com.atlassian.jira.plugins.inform.batching.rendering.context.HeaderContextProvider.Header" *#
+#* @vtlvariable name="fields" type="java.util.List" *#
+#* @vtlvariable name="newIssueGroups" type="java.util.List" *#
+#* @vtlvariable name="comments" type="java.util.List" *#
+#* @vtlvariable name="commentCount" type="java.lang.Integer" *#
+#* @vtlvariable name="commentMentionCount" type="java.lang.Long" *#
+#* @vtlvariable name="issueKey" type="java.lang.String" *#
+#* @vtlvariable name="issueUrl" type="java.lang.String" *#
+#* @vtlvariable name="joinWithCommas" type="java.util.function.Function" *#
+#* @vtlvariable name="mapToStrong" type="java.util.function.Function" *#
+
+<table id="header-top" width="100%" style="width: 100%">
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td valign="middle">
+                        #if ($header.projectUrl)
+                            <a href="$header.projectUrl" style="text-decoration: none">$escape.apply($header.projectName)</a>
+                        #else
+                            $escape.apply($header.projectName)
+                        #end
+                    </td>
+                    <td valign="middle" class="project-spacer">
+                        /
+                    </td>
+                    <td valign="middle" class="issue-type">
+                        <img class="issue-type-avatar" src="$header.issueTypeAvatar" width="16" height="16">
+                    </td>
+                    <td valign="middle" class="issue-key">
+                        #if ($header.issueUrl)
+                            <a href="$header.issueUrl" style="text-decoration: none">$header.issueKey</a>
+                        #else
+                            $header.issueKey
+                        #end
+                    </td>
+                    <td valign="middle" class="issue-status">
+                        #if (!$header.issueState.deleted && $header.issueStatus)
+                            #if($header.issueStatus.categoryKey=='done')
+                                <span class="aui-lozenge aui-lozenge-success">$escape.apply($header.issueStatus.name)</span>
+                            #elseif($header.issueStatus.categoryKey=='indeterminate')
+                                <span class="aui-lozenge aui-lozenge-current">$escape.apply($header.issueStatus.name)</span>
+                            #elseif($header.issueStatus.categoryKey=='new')
+                                <span class="aui-lozenge">$escape.apply($header.issueStatus.name)</span>
+                            #elseif($header.issueStatus.name)
+                                <span class="aui-lozenge aui-lozenge-subtle">$escape.apply($header.issueStatus.name)</span>
+                            #end
+                        #end
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="issue-summary" valign="top"><h1>$escape.apply($header.issueSummary)</h1></td>
+    </tr>
+</table>
+
+#if($header.showActions)
+<table>
+    <tr>
+        <td class="spacer-10">&nbsp;</td>
+    </tr>
+</table>
+<table id="header-actions">
+<tr><td colspan="2">
+    #if ($header.issueUrl)
+        <a href="$header.issueUrl">$i18n.getText('issue.update.batch.mail.header.viewissue')</a>
+    #end
+    &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+    #if ($header.addCommentUrl)
+        <a href="$header.addCommentUrl">$i18n.getText('issue.update.batch.mail.header.addcomment')</a>
+    #end
+</td></tr>
+</table>
+#end

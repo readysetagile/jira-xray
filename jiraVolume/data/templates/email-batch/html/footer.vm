@@ -1,0 +1,48 @@
+## footer pattern
+#disable_html_escaping()
+
+#* @vtlvariable name="buildVersion" type="java.lang.String" *#
+#* @vtlvariable name="currentBuildNumber" type="java.lang.String" *#
+#* @vtlvariable name="commitId" type="java.lang.String" *#
+#* @vtlvariable name="commitIdSha1" type="java.lang.String" *#
+#* @vtlvariable name="partnerName" type="java.lang.String" *#
+
+<table class="footer-text" width="100%">
+    <tr><td class="spacer-10">&nbsp;</td></tr>
+    <tr>
+        <td align="left" width="100%">
+            #set ($commitIdSpan = "")
+            #if ($commitId)
+                #set ($commitIdSpan ="<span title='$!{commitId}' data-commit-id='${commitId}}'>$i18n.getText(
+                    'issue.update.batch.mail.footer.commitid.sha', $commitIdSha1)</span>")
+            #end
+
+            #set ($partnerNameFormatted = "")
+            #if($partnerName)
+                #set ($partnerNameFormatted =$i18n.getText(
+                    'issue.update.batch.mail.footer.partnername', $partnerName))
+            #end
+            $i18n.getText('issue.update.batch.mail.footer.version.info',
+                $i18n.getText("template.jira.footer.generated.by"),
+                $buildVersion,
+                $currentBuildNumber,
+                $commitIdSpan,
+                $partnerNameFormatted)
+        </td>
+        <td>
+            <img src="${baseurl}/images/mail/atlassian-email-logo.png"
+                 alt="Atlassian logo"
+                 title="Atlassian logo"
+                 width="127"
+                 height="16"
+                 class="image_fix"/>
+        </td>
+    </tr>
+    <tr class="spacer-10"></tr>
+    <tr>
+        <td align="left">
+            $i18n.getText('issue.update.batch.mail.footer.survey', [$links.survey])<br>
+            $i18n.getText('issue.update.batch.mail.footer.mobile', [$links.androidApp, $links.iOSApp])
+        </td>
+    </tr>
+</table>

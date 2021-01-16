@@ -1,0 +1,7 @@
+#if (!$firstHorizontalLine)
+    <tr><td class="horizontal-padding">
+        <div class="line-top">&nbsp;</div>
+    </td></tr>
+    <tr><td class="spacer-10"></td></tr>
+#end
+#set($firstHorizontalLine = false)

@@ -5,8 +5,20 @@ Once you have verified the container is running:
 
 1. Navigate to `http://localhost:9090/`
 
-2. This instance does not have security enabled, so you will see the jobs screen with the `jira-xray` job.  You cannot run jobs yet because the correct plugins will not be installed or configured.
+2. This instance does not have security enabled, so you will see the jobs screen with the `jira-xray` job.  All the plugins are installed and configured.
 ![jenkins-jobs](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/jenkins-jobs.png)
+
+3. If you know that Jira is up and you have applied all the necessary licensing, go ahead and try a build to see all the tests run.  Click the arrow next to the jira-xray job and click `Build Now`
+![build-now](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/build-now.png)
+
+4.  You should see the progress of the build, and then the execution results.  You can check out the console output for success or failure.
+![console-out](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jenkins_home/setup-pics/console-out.png)
+
+--------------------------
+## Information only below!!
+--------------------------
+
+If the console output from the build indicates that the build succeeded, great!  You can [head back to the main screen](https://github.com/readysetagile/jira-xray#getting-started) to check the rest of the install.  In case things are not so sunny, you can check your installation below to see what might be misconfigured.
 
 --------------------------
 ## Install Plugins

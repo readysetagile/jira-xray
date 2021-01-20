@@ -28,7 +28,8 @@ RUN sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/googl
 RUN rm google-chrome.deb
 
 # install chromedriver.  the major version of chrome must match the version of chromedriver (e.g. chrome 85 = chromedriver 85)
-RUN wget https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_linux64.zip
+# get the latest version number from the chrome dev site
+RUN CHROME_LATEST=$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE) && wget "https://chromedriver.storage.googleapis.com/$CHROME_LATEST/chromedriver_linux64.zip"
 RUN unzip chromedriver_linux64.zip
 RUN mv chromedriver /usr/bin/chromedriver
 RUN chown root:root /usr/bin/chromedriver

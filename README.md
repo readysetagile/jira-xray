@@ -23,7 +23,16 @@ In short, the solution works like this:
 [Get your containers up and running](#getting-started)
 
 ------------------------------
+## System Requirements
+You are going to be installing Jira and Jenkins servers on your machine running in parallel, which can require some hefty CPU cycles.  That said, you will also be running these in Docker containers.  Docker containers use of resources can be restricted to your system.  Also, I have not done any specific resource management to overcome the limitations (e.g. Orchestration tools like Kubernetes or Docker Swarm).  Perhaps that is in another future release (when I get some feedback from others :) ).
 
+I am running this solution on my laptop which is taylored to business apps.  I do see a performance degrade during startup, however, I do not see any significant performance issues after.  
+Here are the specs of my ASUS system
+- CPU: AMD Ryzen 5 4500U with Radeon Graphics, 2375 Mhz, 6 Core(s), 6 Logical Processor(s)
+- Installed Physical Memory (RAM): 8.00 GB
+- Storage: Total=6.00 GB (Containers=5.00 GB, Container Volumes=1.00 GB)
+	
+------------------------------
 ##  Overall implementation
 
 >
@@ -40,7 +49,7 @@ environment, especially when considering communication between each container.
 ### Docker
 - You will need a [Docker](https://www.docker.com/) host to run this solution.  This solution was tested on Docker for Windows using the [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) on Windows 10.
 
-### CI/CD environement
+### CI/CD environment
 
 The overall container environment looks like this.  The main docker environment runs Jira and Jenkins containers in a simulated network.  When the time comes to test, 
 Jenkins will dynamically spin up a slave Docker container that represents your application running in another isolated environment.  This slave container will then run commands
@@ -63,7 +72,7 @@ To get started with this solution and see it in action
 1. Clone this repo
 2. From the command prompt, run `docker-compose up -d`.  Wait for the images to download and the containers to start.
 	- NOTE: the `docker-compose.yml` file contains reference to volume mounts for jenkins_home and jira_home relative to the `docker-compose.yml` file.  Change these to your convenience (so you wont have to run setup each time).
-3. Build the slave image.  To do this, cd to the `jira-xray/jiraVolume/src` directory and run `docker build` to build the `ruby-cucumber-example` image.
+3. Build the slave image.  To do this, cd to the `jira-xray/jiraVolume/src` directory and run `docker build . -t ruby-docker-slave` to build the `ruby-cucumber-example` image.
 4. [Configure Jira](https://github.com/readysetagile/jira-xray/tree/main/jiraVolume)
 5. [Configure Jenkins](https://github.com/readysetagile/jira-xray/tree/main/jenkins_home)
 6. Allow communication in your firewall (instructions in the Firewall section)
@@ -83,3 +92,24 @@ Here's what I did to get this working in a Windows Docker host:
 1. In a CLI, enter `netsh interface portproxy add v4tov4 listenport=4243 listenaddress=127.0.0.1 connectport=2375 connectaddress=127.0.0.1`
 2. Open the docker settings (from the system tray) and check `"Expose daemon on tcp://localhost:2375 without TLS"`
 
+------------------------------
+
+## Removal
+
+After you have tested this solution, you can easily remove it from your system with the following steps:
+
+1. Stop the containers from the command line
+	```
+	cd jira-xray
+	docker-compose down	
+	```
+2. Remove the images from the docker host, and prune your system
+	docker image rm jira-xray_jenkins ruby-docker-slave jenkins/jenkins ruby atlassian/jira-software
+	``` 
+	docker system prune
+	```
+3. Delete the jira-xray directory and sub-directories
+	```
+	sudo rm -R jira-xray
+	```
+	

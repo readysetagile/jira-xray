@@ -69,13 +69,21 @@ Here is the test plan we will be using.  Basically, we will be testing the user 
 ------------------------------
 ### Getting started
 To get started with this solution and see it in action
+[![installation vid](https://raw.githubusercontent.com/readysetagile/jira-xray/main/jiraVolume/setup-pics/installation-vid-cap.png)](https://drive.google.com/file/d/1F3432_sAUkNBWB3b434Equv8ebHkw7kX/view?usp=sharing "Watch the installation video")
+- OR
+#### Follow these steps
 1. Clone this repo
 2. From the command prompt, run `docker-compose up -d`.  Wait for the images to download and the containers to start.
 	- NOTE: the `docker-compose.yml` file contains reference to volume mounts for jenkins_home and jira_home relative to the `docker-compose.yml` file.  Change these to your convenience (so you wont have to run setup each time).
-3. Build the slave image.  To do this, cd to the `jira-xray/jiraVolume/src` directory and run `docker build . -t ruby-docker-slave` to build the `ruby-cucumber-example` image.
-4. [Configure Jira](https://github.com/readysetagile/jira-xray/tree/main/jiraVolume)
-5. [Configure Jenkins](https://github.com/readysetagile/jira-xray/tree/main/jenkins_home)
-6. Allow communication in your firewall (instructions in the Firewall section)
+3. Jira changes the permissions and ownership of the volume to store files.  Before you can use it, you need to change the permissions back to be read/write for everyone.  Here are the statements I used.
+	```
+	sudo find jiraVolume -type d -exec grep ugo+rwx {} \;
+	sudo find jiraVolume -type f -exec grep ugo+rw {} \;
+	```
+4. Build the slave image.  To do this, cd to the `jira-xray/jiraVolume/src` directory and run `docker build . -t ruby-docker-slave` to build the `ruby-cucumber-example` image.
+5. [Configure Jira](https://github.com/readysetagile/jira-xray/tree/main/jiraVolume)
+6. [Configure Jenkins](https://github.com/readysetagile/jira-xray/tree/main/jenkins_home)
+7. Allow communication in your firewall (instructions in the Firewall section)
 ------------------------------
 
 ### Firewall
@@ -104,8 +112,8 @@ After you have tested this solution, you can easily remove it from your system w
 	docker-compose down	
 	```
 2. Remove the images from the docker host, and prune your system
-	docker image rm jira-xray_jenkins ruby-docker-slave jenkins/jenkins ruby atlassian/jira-software
 	``` 
+	docker image rm jira-xray_jenkins ruby-docker-slave jenkins/jenkins ruby atlassian/jira-software
 	docker system prune
 	```
 3. Delete the jira-xray directory and sub-directories
